@@ -1,13 +1,13 @@
 import { randomUUID } from 'node:crypto'
 
 export interface UserProps {
+    id?: string
     email: string
     name: string
     photo?: string
 }
 
 export class User {
-    private _id: string
     private props: UserProps
 
     constructor(props: UserProps) {
@@ -17,13 +17,15 @@ export class User {
         if (props.email.length === 0) {
             throw new Error('Email can not to be void.')
         }
+        if (!props?.id) {
+            props.id = randomUUID()
+        }
 
-        this._id = randomUUID()
         this.props = props
     }
 
     public get id(): string {
-        return this._id
+        return this.props.id
     }
 
     public set email(email: string) {
