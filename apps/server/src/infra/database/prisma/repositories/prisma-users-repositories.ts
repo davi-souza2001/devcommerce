@@ -18,4 +18,11 @@ export class PrismaUsersRepository implements UserRepository {
         })
     }
 
+    async login(email: string): Promise<User | any> {
+        return await this.prismaService.user.findUnique({
+            where: {
+                email
+            }
+        })
+    }
 }

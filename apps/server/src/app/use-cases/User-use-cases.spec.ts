@@ -1,5 +1,5 @@
 import { User } from "../entities/user"
-import { CreateUser } from "./create-user"
+import { CreateUser } from "./User-use-cases"
 
 const users: User[] = []
 
@@ -14,7 +14,6 @@ describe('Use case: create a new User', () => {
         const createUser = new CreateUser(userRepository)
 
         const { user } = await createUser.execute({
-            id: 'example id',
             email: 'example email',
             name: 'example name',
             photo: 'example photo'

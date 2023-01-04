@@ -13,22 +13,23 @@ interface CreateUserResponse {
 }
 
 @Injectable()
-export class CreateUser {
+export class UserCases {
     constructor(private userRepository: UserRepository) { }
 
-    async execute(request: CreateUserRequest): Promise<CreateUserResponse> {
+    async create(request: CreateUserRequest): Promise<CreateUserResponse> {
         const { email, name, photo } = request
 
-        const user = new User({
-            email,
-            name,
-            photo
-        })
+        const user = new User({ email, name, photo })
 
         await this.userRepository.create(user)
 
         return {
             user
         }
+    }
+
+    async login(email: string): Promise<User | any> {
+
+        return await this.userRepository.login(email)
     }
 }

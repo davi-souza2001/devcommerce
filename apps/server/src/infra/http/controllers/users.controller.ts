@@ -1,18 +1,25 @@
 import { Body, Controller, Post } from '@nestjs/common'
-import { CreateUser } from 'src/app/use-cases/create-user'
+import { UserCases } from 'src/app/use-cases/User-use-cases'
 
 @Controller()
 export class UsersController {
-  constructor(private createUser: CreateUser) { }
+  constructor(private useCases: UserCases) { }
 
-  @Post('users')
+  @Post('user/create')
   async create(@Body() body: any) {
     const { email, name, photo } = body
 
-    const { } = await this.createUser.execute({
+    await this.useCases.create({
       email,
       name,
       photo
     })
+  }
+
+  @Post('user/login')
+  async login(@Body() body: any) {
+    const email = body.email
+
+    return await this.useCases.login(email)
   }
 }
