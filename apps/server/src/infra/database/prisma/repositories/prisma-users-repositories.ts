@@ -5,24 +5,24 @@ import { PrismaService } from "../prisma.service";
 
 @Injectable()
 export class PrismaUsersRepository implements UserRepository {
-    constructor(private prismaService: PrismaService) { }
+	constructor(private prismaService: PrismaService) { }
 
-    async create(user: User): Promise<void> {
-        await this.prismaService.user.create({
-            data: {
-                id: user.id,
-                name: user.name,
-                email: user.email,
-                photo: user.photo
-            }
-        })
-    }
+	async create(user: User): Promise<void> {
+		await this.prismaService.user.create({
+			data: {
+				id: user.id,
+				name: user.name,
+				email: user.email,
+				photo: user.photo
+			}
+		})
+	}
 
-    async login(email: string): Promise<User | any> {
-        return await this.prismaService.user.findUnique({
-            where: {
-                email
-            }
-        })
-    }
+	async login(email: string): Promise<User | any> {
+		return await this.prismaService.user.findUnique({
+			where: {
+				email
+			}
+		})
+	}
 }

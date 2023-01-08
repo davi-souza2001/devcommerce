@@ -3,33 +3,33 @@ import { UserRepository } from "../repositories/user-repositories"
 import { User } from "../entities/user"
 
 interface CreateUserRequest {
-    email: string
-    name: string
-    photo?: string
+	email: string
+	name: string
+	photo?: string
 }
 
 interface CreateUserResponse {
-    user: User
+	user: User
 }
 
 @Injectable()
 export class UserCases {
-    constructor(private userRepository: UserRepository) { }
+	constructor(private userRepository: UserRepository) { }
 
-    async create(request: CreateUserRequest): Promise<CreateUserResponse> {
-        const { email, name, photo } = request
+	async create(request: CreateUserRequest): Promise<CreateUserResponse> {
+		const { email, name, photo } = request
 
-        const user = new User({ email, name, photo })
+		const user = new User({ email, name, photo })
 
-        await this.userRepository.create(user)
+		await this.userRepository.create(user)
 
-        return {
-            user
-        }
-    }
+		return {
+			user
+		}
+	}
 
-    async login(email: string): Promise<User | any> {
+	async login(email: string): Promise<User | any> {
 
-        return await this.userRepository.login(email)
-    }
+		return await this.userRepository.login(email)
+	}
 }
