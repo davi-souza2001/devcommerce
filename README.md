@@ -69,4 +69,9 @@ npx turbo link
 - [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
 - [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
 - [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
-<!-- asd -->
+
+<!-- 
+Criar tela de criação de avatar
+Colocar biblioteca de animação de div
+colocar senha no backend
+ -->
