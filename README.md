@@ -72,6 +72,6 @@ npx turbo link
 
 <!-- 
 Criar tela de criação de avatar
-Colocar biblioteca de animação de div
+Colocar biblioteca de animação de div - colocar form da mesma biblioteca
 colocar senha no backend
  -->
