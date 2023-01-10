@@ -27,7 +27,7 @@ export default function Login() {
 							type="password"
 							placeholder="Senha"
 						/>
-						<div className="h-10 w-[80%] flex items-center">
+						<div className="h-10 w-[80%] flex items-center ml-5">
 							<input type="checkbox" className="text-3xl outline-none" />
 							<p className="mx-3 text-gray-500">Lembrar-me</p>
 						</div>
