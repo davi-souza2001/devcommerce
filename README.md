@@ -71,6 +71,9 @@ npx turbo link
 - [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
 
 <!-- 
+Colocar objeto de avatar na entidade de usuário
+Fazer rotas minimas para criar um usuário
+Fazer top bar e profile do usuário
 Colocar biblioteca de animação de div - colocar form da mesma biblioteca
 colocar senha no backend
  -->
