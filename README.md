@@ -71,7 +71,6 @@ npx turbo link
 - [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
 
 <!-- 
-Criar tela de criação de avatar
 Colocar biblioteca de animação de div - colocar form da mesma biblioteca
 colocar senha no backend
  -->
