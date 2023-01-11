@@ -15,11 +15,6 @@ export default function Login() {
 						<input
 							className="my-5 h-16 w-[80%] rounded-lg outline-none text-gray-500 font-bold"
 							type="text"
-							placeholder="Nome"
-						/>
-						<input
-							className="my-5 h-16 w-[80%] rounded-lg outline-none text-gray-500 font-bold"
-							type="text"
 							placeholder="E-mail"
 						/>
 						<input
