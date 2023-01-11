@@ -12,8 +12,7 @@ export class PrismaUsersRepository implements UserRepository {
 			data: {
 				id: user.id,
 				name: user.name,
-				email: user.email,
-				photo: user.photo
+				email: user.email
 			}
 		})
 	}

@@ -7,12 +7,11 @@ export class UsersController {
 
 	@Post('user/create')
 	async create(@Body() body: any) {
-		const { email, name, photo } = body
+		const { email, name } = body
 
 		await this.useCases.create({
 			email,
-			name,
-			photo
+			name
 		})
 	}
 

@@ -1,11 +1,11 @@
 import { Injectable } from "@nestjs/common/decorators"
 import { UserRepository } from "../repositories/user-repositories"
-import { User } from "../entities/user"
+import { AvatarProps, User } from "../entities/user"
 
 interface CreateUserRequest {
 	email: string
 	name: string
-	photo?: string
+	avatar?: AvatarProps
 }
 
 interface CreateUserResponse {
@@ -17,9 +17,9 @@ export class UserCases {
 	constructor(private userRepository: UserRepository) { }
 
 	async create(request: CreateUserRequest): Promise<CreateUserResponse> {
-		const { email, name, photo } = request
+		const { email, name } = request
 
-		const user = new User({ email, name, photo })
+		const user = new User({ email, name })
 
 		await this.userRepository.create(user)
 
