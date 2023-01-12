@@ -5,7 +5,6 @@ describe('Create user', () => {
         expect(new User({
             email: 'teste@gmail.com',
             name: 'teste',
-            photo: 'http://teste.com'
         })).toBeTruthy()
     })
 
@@ -13,7 +12,6 @@ describe('Create user', () => {
         expect(() => new User({
             email: 'teste@gmail.com',
             name: '',
-            photo: 'http://teste.com'
         })).toThrow()
     })
 
@@ -22,7 +20,6 @@ describe('Create user', () => {
             email: '',
             id: 'asdasdasd',
             name: 'teste',
-            photo: 'http://teste.com'
         })).toThrow()
     })
 })

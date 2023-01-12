@@ -1,11 +1,10 @@
 import { Injectable } from "@nestjs/common/decorators"
 import { UserRepository } from "../repositories/user-repositories"
-import { AvatarProps, User } from "../entities/user"
+import { User } from "../entities/user"
 
 interface CreateUserRequest {
 	email: string
 	name: string
-	avatar?: AvatarProps
 }
 
 interface CreateUserResponse {
