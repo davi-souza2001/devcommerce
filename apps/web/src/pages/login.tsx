@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { ButtonField } from "../components/ButtonField";
+import { InputField } from "../components/InputField";
 
 export default function Login() {
 	return (
@@ -12,15 +14,15 @@ export default function Login() {
 				</div>
 				<div className="h-2/4 w-full flex items-center">
 					<form className="h-full w-full flex items-center justify-center flex-col">
-						<input
-							className="my-5 h-16 w-[80%] rounded-lg outline-none text-gray-500 font-bold"
+						<InputField
+							className="my-5 w-[80%]"
 							type="text"
-							placeholder="E-mail"
+							placeHolder="E-mail"
 						/>
-						<input
-							className="my-5 h-16 w-[80%] rounded-lg outline-none text-gray-500 font-bold"
+						<InputField
+							className="my-5 w-[80%]"
 							type="password"
-							placeholder="Senha"
+							placeHolder="Senha"
 						/>
 						<div className="h-10 w-[80%] flex items-center ml-5">
 							<input type="checkbox" className="text-3xl outline-none" />
@@ -29,9 +31,7 @@ export default function Login() {
 					</form>
 				</div>
 				<div className="h-1/4 w-full flex items-center justify-start flex-col ">
-					<button className="h-12 w-96 flex items-center justify-center bg-green-500 rounded-lg text-xl font-semibold text-slate-200">
-						Entrar
-					</button>
+					<ButtonField text="Entrar" className="w-96"/>
 					<div className="h-12 w-full flex items-center justify-center">
 						<p>Não tem conta? <Link href='/cadastro' className="text-green-500">Cadastre-se</Link></p>
 					</div>
