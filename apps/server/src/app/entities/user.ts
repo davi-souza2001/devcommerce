@@ -6,26 +6,6 @@ export interface UserProps {
 	name: string
 }
 
-export interface AvatarProps {
-	accessory: string
-	body: string
-	circleColor: string
-	clothing: string
-	clothingColor: string
-	eyebrows: string
-	eyes: string
-	faceMask: string
-	facialHair: string
-	graphic: string
-	hair: string
-	hairColor: string
-	hat: string
-	hatColor: string
-	lipColor: string
-	mouth: string
-	skinTone: string
-}
-
 export class User {
 	private props: UserProps
 

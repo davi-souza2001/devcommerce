@@ -8,7 +8,32 @@ datasource db {
 }
 
 model User {
-  id    String @id
-  name  String
-  email String @unique
+  id     String   @id
+  name   String
+  email  String   @unique
+  Avatar Avatar[]
+}
+
+model Avatar {
+  id            String  @id
+  idUser        String
+  accessory     String
+  body          String
+  circleColor   String
+  clothing      String
+  clothingColor String
+  eyebrows      String
+  eyes          String
+  faceMask      Boolean
+  facialHair    String
+  graphic       String
+  hair          String
+  hairColor     String
+  hat           String
+  hatColor      String
+  lipColor      String
+  mouth         String
+  skinTone      String
+
+  user User @relation(fields: [idUser], references: [id])
 }
