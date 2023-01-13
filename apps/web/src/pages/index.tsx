@@ -1,7 +1,9 @@
+import { TopBar } from "../components/TopBar";
+
 export default function Home() {
-  return (
-    <div className="bg-red-500">
-      <h1>Ola</h1>
-    </div>
-  )
+	return (
+		<div className="h-screen w-screen">
+			<TopBar />
+		</div>
+	)
 }
