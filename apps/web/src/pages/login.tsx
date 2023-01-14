@@ -9,7 +9,7 @@ export default function Login() {
 			<div className="h-full w-3/4 bg-purple-500 flex items-center justify-center">
 				App Name
 			</div>
-			<div className="h-full w-1/2 bg-slate-200">
+			<div className="h-full w-1/2">
 				<div className="h-1/4 w-full flex items-end justify-center text-4xl font-semibold">
 					<h1>Fazer Login</h1>
 				</div>
