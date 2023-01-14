@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { BackgroundField } from "../components/BackgroundField";
 import { ButtonField } from "../components/ButtonField";
 import { InputField } from "../components/InputField";
 
 export default function Cadastro() {
 	return (
-		<div className="h-screen w-screen flex items-center justify-center">
+		<BackgroundField className="flex items-center justify-center">
 			<div className="h-full w-3/4 bg-purple-500 flex items-center justify-center">
 				App Name
 			</div>
@@ -42,6 +43,6 @@ export default function Cadastro() {
 					</div>
 				</div>
 			</div>
-		</div>
+		</BackgroundField>
 	)
 }

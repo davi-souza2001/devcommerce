@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { BackgroundField } from "../components/BackgroundField";
 import { ButtonField } from "../components/ButtonField";
 import { InputField } from "../components/InputField";
 
 export default function Login() {
 	return (
-		<div className="h-screen w-screen flex items-center justify-center">
+		<BackgroundField className="flex items-center justify-center">
 			<div className="h-full w-3/4 bg-purple-500 flex items-center justify-center">
 				App Name
 			</div>
@@ -31,12 +32,12 @@ export default function Login() {
 					</form>
 				</div>
 				<div className="h-1/4 w-full flex items-center justify-start flex-col ">
-					<ButtonField text="Entrar" className="w-96"/>
+					<ButtonField text="Entrar" className="w-96" />
 					<div className="h-12 w-full flex items-center justify-center">
 						<p>Não tem conta? <Link href='/cadastro' className="text-green-500">Cadastre-se</Link></p>
 					</div>
 				</div>
 			</div>
-		</div>
+		</BackgroundField>
 	)
 }
