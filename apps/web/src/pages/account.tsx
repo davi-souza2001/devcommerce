@@ -5,8 +5,15 @@ import Perfil from '../../public/Perfil.jpg';
 import { InputField } from '../components/InputField';
 import { ButtonField } from '../components/ButtonField';
 import { BackgroundField } from '../components/BackgroundField';
+import { useState } from 'react';
+import UseAuth from '../service/hook/useAuth';
 
 export default function Account() {
+	const [name, setName] = useState('')
+	const [email, setEmail] = useState('')
+
+	const { logoutInFirebase } = UseAuth()
+
 	return (
 		<BackgroundField>
 			<TopBar />
@@ -27,8 +34,13 @@ export default function Account() {
 						<p>Seus dados:</p>
 					</div>
 					<div className='w-full flex flex-col items-center justify-start text-xl font-semibold p-4'>
-						<InputField placeHolder='Nome' type='string' className='w-full mb-5' />
-						<InputField placeHolder='E-mail' type='string' className='w-full mb-5' />
+						<InputField placeHolder='Nome' type='string' className='w-full mb-5'
+							value={name}
+							onChange={(e) => setName(e.target.value)} />
+						<InputField placeHolder='E-mail' type='string' className='w-full mb-5'
+							value={email}
+							onChange={(e) => setEmail(e.target.value)}
+						/>
 						<ButtonField text='Alterar' className='w-32' />
 					</div>
 				</div>

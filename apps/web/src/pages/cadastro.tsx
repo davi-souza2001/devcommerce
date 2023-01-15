@@ -3,14 +3,17 @@ import { useState } from "react";
 import { BackgroundField } from "../components/BackgroundField";
 import { ButtonField } from "../components/ButtonField";
 import { InputField } from "../components/InputField";
+import UseAuth from "../service/hook/useAuth";
 
 export default function Cadastro() {
 	const [name, setName] = useState('')
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 
-	async function handleLogin() {
-		console.log({
+	const { createAccount } = UseAuth()
+
+	function handleCreate() {
+		createAccount({
 			name,
 			email,
 			password
@@ -56,7 +59,7 @@ export default function Cadastro() {
 					</form>
 				</div>
 				<div className="h-1/4 w-full flex items-center justify-start flex-col ">
-					<ButtonField text="Criar" className="w-96" onClick={handleLogin} />
+					<ButtonField text="Criar" className="w-96" onClick={handleCreate} />
 					<div className="h-12 w-full flex items-center justify-center">
 						<p>Já tem conta? <Link href='/login' className="text-green-500">Fazer login</Link></p>
 					</div>

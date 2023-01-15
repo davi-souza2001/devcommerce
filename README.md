@@ -76,4 +76,5 @@ Fazer rotas minimas para criar um usuário
 Fazer top bar e profile do usuário
 Colocar biblioteca de animação de div - colocar form da mesma biblioteca
 colocar senha no backend
+Adicionar mensagens de erro no front e no back (talvez retornando da api)
  -->
