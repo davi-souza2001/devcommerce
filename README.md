@@ -71,6 +71,7 @@ npx turbo link
 - [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
 
 <!-- 
+Corrigir problema da cor do botão
 Colocar objeto de avatar na entidade de usuário
 Fazer rotas minimas para criar um usuário
 Fazer top bar e profile do usuário

@@ -42,6 +42,10 @@ export default function Account() {
 							onChange={(e) => setEmail(e.target.value)}
 						/>
 						<ButtonField text='Alterar' className='w-32' />
+						<ButtonField text='Logout'
+							className='w-32'
+							onClick={logoutInFirebase}
+						/>
 					</div>
 				</div>
 			</div>

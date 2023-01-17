@@ -1,4 +1,5 @@
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import Router from 'next/router';
 import { createContext, useEffect, useState } from 'react';
 import { auth } from '../../firebase';
 
@@ -12,7 +13,7 @@ interface AuthContextProps {
 interface User {
 	name: string
 	email: string
-	password: string
+	password?: string
 }
 
 const AuthContext = createContext<AuthContextProps>({
@@ -35,7 +36,7 @@ export function AuthProvider(props: any) {
 
 	function createAccount(user: User) {
 		console.log('teste')
-		createUserInFirebase(user.email, user.password)
+		createUserInFirebase(user.email, user.password ?? '')
 	}
 
 	function loginAccount(email: string, password: string) {
@@ -56,10 +57,7 @@ export function AuthProvider(props: any) {
 
 	function loginUserInFirebase(email: string, password: string) {
 		signInWithEmailAndPassword(auth, email, password)
-			.then((userCredential) => {
-				const user = userCredential.user
-				console.log(user)
-			})
+			.then(() => Router.push('/'))
 			.catch((error) => {
 				const errorMessage = error.message
 				console.log(errorMessage)
@@ -67,12 +65,15 @@ export function AuthProvider(props: any) {
 	}
 
 	function getUserInFirebase() {
-		onAuthStateChanged(auth, (user) => {
-			if (user) {
-				const uid = user.uid
-				console.log(uid)
+		onAuthStateChanged(auth, (userSearch) => {
+			if (userSearch) {
+				const user: User = {
+					email: userSearch.email ?? '',
+					name: userSearch.displayName ?? ''
+				}
+				setUser(user)
 			} else {
-				console.log('User is signed out')
+				Router.push('/login')
 			}
 		})
 	}
@@ -80,6 +81,7 @@ export function AuthProvider(props: any) {
 	function logoutInFirebase() {
 		signOut(auth).then(() => {
 			console.log('Sign-out successful')
+			Router.push('/login')
 		}).catch(() => {
 			console.log('An error happened')
 		})
