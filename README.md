@@ -71,11 +71,17 @@ npx turbo link
 - [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
 
 <!-- 
+Colocar rotas no front de criar avatar
+Juntar requisições do front com firebase e servidor
+Deixar sistema de login funcionando
+Colocar mensagens de erros e ver animações no front
 Corrigir problema da cor do botão
-Colocar objeto de avatar na entidade de usuário
-Fazer rotas minimas para criar um usuário
-Fazer top bar e profile do usuário
 Colocar biblioteca de animação de div - colocar form da mesma biblioteca
-colocar senha no backend
-Adicionar mensagens de erro no front e no back (talvez retornando da api)
+Adicionar mensagens de erro no front
+Fazer responsividade
+Compartilhar componentes para projeto admin
+Criar entidade de item comprado
+Criar entidade de carrinho
+Adicionar rotas de item e carrinho para front
+Adicionar função de adicionar itens no admin
  -->
