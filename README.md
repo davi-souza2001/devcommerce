@@ -71,6 +71,7 @@ npx turbo link
 - [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
 
 <!-- 
+Colocar mensagens de erros das rotas
 Colocar rotas no front de criar avatar
 Juntar requisições do front com firebase e servidor
 Deixar sistema de login funcionando
