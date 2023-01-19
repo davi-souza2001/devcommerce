@@ -2,6 +2,7 @@ import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndP
 import Router from 'next/router';
 import { createContext, useEffect, useState } from 'react';
 import { auth } from '../../firebase';
+import UseFetch from '../hook/useFetch';
 
 interface AuthContextProps {
 	user: User
@@ -35,12 +36,16 @@ export function AuthProvider(props: any) {
 	})
 
 	function createAccount(user: User) {
-		console.log('teste')
-		createUserInFirebase(user.email, user.password ?? '')
+		// createUserInFirebase(user.email, user.password ?? '')
+		UseFetch('http://localhost:3001/user/create', 'POST', {
+			email: user.email,
+			name: user.name
+		}).then(res => console.log(res))
 	}
 
 	function loginAccount(email: string, password: string) {
 		loginUserInFirebase(email, password)
+		console.log('Função do server')
 	}
 
 	function createUserInFirebase(email: string, password: string) {
