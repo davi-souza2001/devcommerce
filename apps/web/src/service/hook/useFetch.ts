@@ -1,6 +1,6 @@
 import { api } from "../../data/client"
 
-const UseFetch = (url: string, method: 'POST' | 'GET', body: any) => {
+const UseFetch = (url: string, method: 'POST' | 'GET', body?: any) => {
 	if(method === "POST"){
 		return api.post(url, body).then(res => res.data)
 	} else if(method === "GET"){
