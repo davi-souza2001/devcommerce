@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { AvatarProps, BigHead } from "@bigheads/core";
 import { AvatarOptions } from "../../utils/avatarOptions";
+import UseAuth from "../../service/hook/useAuth";
 
 export default function Avatar() {
 	const [avatar, setAvatar] = useState<AvatarProps>({})
+	const { user } = UseAuth()
 
-	useEffect(() => {
-		console.log(avatar)
-	}, [avatar])
+	console.log(user)
 
 	return (
 		<div className="h-screen w-screen bg-slate-200 overflow-y-auto">
