@@ -12,6 +12,7 @@ interface AuthContextProps {
 }
 
 interface User {
+	id?: string
 	name: string
 	email: string
 	password?: string
@@ -36,37 +37,36 @@ export function AuthProvider(props: any) {
 	})
 
 	function createAccount(user: User) {
-		// createUserInFirebase(user.email, user.password ?? '')
+		createUserInFirebase(user.email, user.password ?? '')
 		UseFetch('http://localhost:3001/user/create', 'POST', {
 			email: user.email,
 			name: user.name
-		}).then(res => console.log(res))
+		}).then(() => Router.push('/login'))
+			.catch(err => console.log(err))
 	}
 
 	function loginAccount(email: string, password: string) {
 		loginUserInFirebase(email, password)
-		console.log('Função do server')
+		UseFetch('http://localhost:3001/user/login', 'POST', { email })
+			.then(res => {
+				setUser({
+					id: res.id,
+					email: res.email,
+					name: res.name
+				})
+				Router.push('/')
+			})
+			.catch(err => console.log(err))
 	}
 
 	function createUserInFirebase(email: string, password: string) {
 		createUserWithEmailAndPassword(auth, email, password)
-			.then((userCredential) => {
-				const user = userCredential.user
-				console.log(user)
-			})
-			.catch((error) => {
-				const errorMessage = error.message
-				console.log(errorMessage)
-			})
+			.catch((error) => console.log(error.message))
 	}
 
 	function loginUserInFirebase(email: string, password: string) {
 		signInWithEmailAndPassword(auth, email, password)
-			.then(() => Router.push('/'))
-			.catch((error) => {
-				const errorMessage = error.message
-				console.log(errorMessage)
-			})
+			.catch((error) => console.log(error.message))
 	}
 
 	function getUserInFirebase() {
