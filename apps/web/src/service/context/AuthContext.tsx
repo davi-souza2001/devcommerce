@@ -84,12 +84,8 @@ export function AuthProvider(props: any) {
 	}
 
 	function logoutInFirebase() {
-		signOut(auth).then(() => {
-			console.log('Sign-out successful')
-			Router.push('/login')
-		}).catch(() => {
-			console.log('An error happened')
-		})
+		signOut(auth).then(() => Router.push('/login'))
+			.catch(() => console.log('An error happened'))
 	}
 
 	useEffect(() => {
