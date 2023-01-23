@@ -74,9 +74,18 @@ export function AuthProvider(props: any) {
 			if (userSearch) {
 				const user: User = {
 					email: userSearch.email ?? '',
-					name: userSearch.displayName ?? ''
+					name: ''
 				}
-				setUser(user)
+				UseFetch('http://localhost:3001/user/login', 'POST', {
+					email: userSearch.email
+				}).then(userComplete => {
+					setUser({
+						...user,
+						id: userComplete.id,
+						name: userComplete.name
+					})
+				})
+					.catch(err => console.log(err))
 			} else {
 				Router.push('/login')
 			}
