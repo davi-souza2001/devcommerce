@@ -2,12 +2,24 @@ import { useState } from "react";
 import { AvatarProps, BigHead } from "@bigheads/core";
 import { AvatarOptions } from "../../utils/avatarOptions";
 import UseAuth from "../../service/hook/useAuth";
+import UseFetch from "../../service/hook/useFetch";
 
 export default function Avatar() {
 	const [avatar, setAvatar] = useState<AvatarProps>({})
 	const { user } = UseAuth()
 
-	console.log(user)
+	function handleSubmitAvatar() {
+		if (!avatar.body) {
+			return alert('No body content')
+		} else if (!avatar.clothing) {
+			return alert('No clothing content')
+		} else if (user.id) {
+			const reqBody = { ...avatar, idUser: user.id }
+			UseFetch('http://localhost:3001/avatar/create', 'POST', reqBody)
+		} else {
+			return alert('No user')
+		}
+	}
 
 	return (
 		<div className="h-screen w-screen bg-slate-200 overflow-y-auto">
@@ -210,7 +222,9 @@ export default function Avatar() {
 						})}
 					</select>
 				</form>
-				<button className="h-12 w-72 flex items-center justify-center bg-green-500 rounded-lg text-xl font-semibold text-slate-200 my-5">
+				<button className="h-12 w-72 flex items-center justify-center bg-green-500 rounded-lg text-xl font-semibold text-slate-200 my-5"
+					onClick={() => handleSubmitAvatar()}
+				>
 					Criar
 				</button>
 			</div>

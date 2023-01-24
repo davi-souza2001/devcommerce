@@ -28,6 +28,8 @@ export class AvatarController {
 			idUser
 		} = bodyRequest
 
+		console.log(bodyRequest)
+
 		await this.useCases.create({
 			accessory,
 			body,

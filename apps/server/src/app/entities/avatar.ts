@@ -26,7 +26,7 @@ export class Avatar {
 	private props: AvatarProps
 
 	constructor(props: AvatarProps) {
-		if (props.accessory.length === 0) {
+		if (props.clothing.length === 0) {
 			throw new Error('accessory can not to be void.')
 		}
 		if (props.idUser.length === 0) {
@@ -34,48 +34,6 @@ export class Avatar {
 		}
 		if (props.body.length === 0) {
 			throw new Error('body can not to be void.')
-		}
-		if (props.circleColor.length === 0) {
-			throw new Error('circleColor can not to be void.')
-		}
-		if (props.clothing.length === 0) {
-			throw new Error('clothing can not to be void.')
-		}
-		if (props.clothingColor.length === 0) {
-			throw new Error('clothingColor can not to be void.')
-		}
-		if (props.eyebrows.length === 0) {
-			throw new Error('eyebrows can not to be void.')
-		}
-		if (props.eyes.length === 0) {
-			throw new Error('eyes can not to be void.')
-		}
-		if (props.facialHair.length === 0) {
-			throw new Error('facialHair can not to be void.')
-		}
-		if (props.graphic.length === 0) {
-			throw new Error('graphic can not to be void.')
-		}
-		if (props.hair.length === 0) {
-			throw new Error('hair can not to be void.')
-		}
-		if (props.hairColor.length === 0) {
-			throw new Error('hairColor can not to be void.')
-		}
-		if (props.hat.length === 0) {
-			throw new Error('hat can not to be void.')
-		}
-		if (props.hatColor.length === 0) {
-			throw new Error('hatColor can not to be void.')
-		}
-		if (props.lipColor.length === 0) {
-			throw new Error('lipColor can not to be void.')
-		}
-		if (props.mouth.length === 0) {
-			throw new Error('mouth can not to be void.')
-		}
-		if (props.skinTone.length === 0) {
-			throw new Error('skinTone can not to be void.')
 		}
 
 		if (!props?.id) {
