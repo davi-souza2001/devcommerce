@@ -71,6 +71,7 @@ npx turbo link
 - [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
 
 <!-- 
+TODO: Trocar back para node normal
 TODO: Colocar rotas no front de criar avatar
 TODO: Juntar requisições do front com firebase e servidor
 TODO: Deixar sistema de login funcionando
