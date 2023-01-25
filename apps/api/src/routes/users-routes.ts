@@ -1,6 +1,6 @@
 import express from 'express'
 import { PrismaUsers } from '../repositories/prisma/prisma-users'
-import { SubmitUserService } from '../services/user/submit-user-service'
+import { SubmitUserService } from '../services/submit-user-service'
 
 export const routesUser = express.Router()
 

@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import { SubmitUserService } from '../services/user/submit-user-service'
+import { SubmitUserService } from '../services/submit-user-service'
 import { UsersMock } from './data/user-mock'
 
 const submitUser = new SubmitUserService(new UsersMock())

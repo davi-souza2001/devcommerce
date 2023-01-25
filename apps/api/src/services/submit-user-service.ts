@@ -1,4 +1,4 @@
-import { Users } from '../../repositories/users'
+import { Users } from '../repositories/users'
 
 interface SubmitUserServiceRequest {
 	name: string
