@@ -12,7 +12,7 @@ routesUser.post('/user/create', async (req, res) => {
 	const submitUserService = new SubmitUserService(prismaUsers)
 
 	try {
-		const user = await submitUserService.executeCreate({
+		await submitUserService.executeCreate({
 			name,
 			email
 		})

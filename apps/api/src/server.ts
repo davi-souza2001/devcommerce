@@ -12,6 +12,4 @@ app.use(cors())
 
 app.use(routesUser)
 
-app.listen(process.env.PORT || 3333, () => {
-	console.log(`Server Running in ${process.env.PORT || 3333}!`);
-})
+app.listen(process.env.PORT || 3333)

@@ -72,7 +72,6 @@ npx turbo link
 
 <!-- 
 TODO: Trocar back para node normal
-TODO: Configurar teste no novo backend com biblioteca do meu linkedin
 TODO: Colocar rotas no front de criar avatar
 TODO: Juntar requisições do front com firebase e servidor
 TODO: Deixar sistema de login funcionando

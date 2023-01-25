@@ -1,17 +1,32 @@
+import { describe, it, expect } from 'vitest'
+
 import { SubmitUserService } from '../services/user/submit-user-service'
+import { UsersMock } from './data/user-mock'
 
-const createUserSpy = jest.fn();
-
-const submitUser = new SubmitUserService(
-	{
-		create: createUserSpy,
-	}
-)
+const submitUser = new SubmitUserService(new UsersMock())
 
 describe('Tests for user', () => {
-	it('Should be able to submit a user', async () => {
-		await expect(submitUser.executeCreate({ name: 'Davi Souza' })).resolves.not.toThrow();
+	it('Should not be able to submit a user without name', async () => {
 
-		expect(createUserSpy).toHaveBeenCalled();
+		await expect(submitUser.executeCreate({
+			email: '123@teste.com',
+			name: '',
+		})).rejects.toThrow()
+	})
+
+	it('Should not be able to submit a user without email', async () => {
+
+		await expect(submitUser.executeCreate({
+			email: '',
+			name: 'teste',
+		})).rejects.toThrow()
+	})
+
+	it('Should be able to submit a userl', async () => {
+
+		await expect(submitUser.executeCreate({
+			email: '123@teste.com',
+			name: 'teste',
+		})).toBeTruthy()
 	})
 })
