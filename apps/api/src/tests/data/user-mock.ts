@@ -8,4 +8,13 @@ export class UsersMock implements Users {
 			this.users.push({ name, email })
 		}
 	}
+
+	async login(email: string) {
+		const user = this.users.find(user => user.email === email) ?? {
+			email: 'teste@gmail',
+			name: 'teste'
+		}
+
+		return user
+	}
 }

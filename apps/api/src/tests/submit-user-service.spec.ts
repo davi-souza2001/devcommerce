@@ -5,7 +5,7 @@ import { UsersMock } from './data/user-mock'
 
 const submitUser = new SubmitUserService(new UsersMock())
 
-describe('Tests for user', () => {
+describe('Tests for users', () => {
 	it('Should not be able to submit a user without name', async () => {
 
 		await expect(submitUser.executeCreate({
@@ -22,11 +22,21 @@ describe('Tests for user', () => {
 		})).rejects.toThrow()
 	})
 
-	it('Should be able to submit a userl', async () => {
+	it('Should be able to submit a user', async () => {
 
 		await expect(submitUser.executeCreate({
 			email: '123@teste.com',
 			name: 'teste',
 		})).toBeTruthy()
+	})
+
+	it('Should not be able to login a user without email', async () => {
+
+		await expect(submitUser.executeLogin('')).rejects.toThrow()
+	})
+
+	it('Should be able to login a user', async () => {
+
+		await expect(submitUser.executeLogin('teste@gmail.com')).toBeTruthy()
 	})
 })

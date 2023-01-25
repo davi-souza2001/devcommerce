@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "test": "vitest",
-    "cov": "vitest run --coverage"
-,    "dev": "tsx watch src/server.ts",
+    "cov": "vitest run --coverage",
+    "dev": "tsx watch src/server.ts",
     "build": "npx tsc"
   },
   "devDependencies": {

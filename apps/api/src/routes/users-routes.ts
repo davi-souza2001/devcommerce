@@ -4,12 +4,12 @@ import { SubmitUserService } from '../services/user/submit-user-service'
 
 export const routesUser = express.Router()
 
+const prismaUsers = new PrismaUsers()
+
+const submitUserService = new SubmitUserService(prismaUsers)
+
 routesUser.post('/user/create', async (req, res) => {
 	const { name, email } = req.body
-
-	const prismaUsers = new PrismaUsers()
-
-	const submitUserService = new SubmitUserService(prismaUsers)
 
 	try {
 		await submitUserService.executeCreate({
@@ -17,7 +17,21 @@ routesUser.post('/user/create', async (req, res) => {
 			email
 		})
 
-		return res.status(201)
+		return res.status(201).json({ message: 'User created!' })
+
+	} catch (error: any) {
+
+		return res.status(401).json({ message: error.message })
+	}
+})
+
+routesUser.post('/user/login', async (req, res) => {
+	const { email } = req.body
+
+	try {
+		const user = await submitUserService.executeLogin(email)
+
+		return res.status(201).json(user)
 
 	} catch (error: any) {
 
