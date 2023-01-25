@@ -4,7 +4,7 @@ import dotenv from 'dotenv'
 
 import { routesUser } from './routes/users-routes'
 
-const dot = dotenv.config()
+dotenv.config()
 const app = express()
 
 app.use(express.json())

@@ -3,7 +3,12 @@ import { UserCreateData, Users } from '../users'
 
 export class PrismaUsers implements Users {
 
-	async create({ name }: UserCreateData) {
-		const user = await prisma.user.create({ name })
+	async create({ name, email }: UserCreateData) {
+		await prisma.user.create({
+			data: {
+				email,
+				name
+			}
+		})
 	}
 }

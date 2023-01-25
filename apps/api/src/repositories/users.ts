@@ -1,5 +1,6 @@
 export interface UserCreateData{
 	name: string
+	email: string
 }
 
 export interface Users{

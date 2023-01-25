@@ -2,6 +2,7 @@ import { Users } from '../../repositories/users'
 
 interface SubmitUserServiceRequest {
 	name: string
+	email: string
 }
 
 export class SubmitUserService {
@@ -10,12 +11,16 @@ export class SubmitUserService {
 	) { }
 
 	async executeCreate(request: SubmitUserServiceRequest) {
-		const { name } = request
+		const { name, email } = request
 
 		if (!name) {
 			throw new Error('Name is required!')
 		}
 
-		const user = await this.usersRepository.create({ name })
+		if (!email) {
+			throw new Error('Email is required!')
+		}
+
+		await this.usersRepository.create({ email, name })
 	}
 }
