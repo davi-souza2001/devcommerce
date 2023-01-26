@@ -71,9 +71,7 @@ npx turbo link
 - [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
 
 <!-- 
-TODO: Colocar rotas no front de criar avatar
-TODO: Juntar requisições do front com firebase e servidor
-TODO: Deixar sistema de login funcionando
+TODO: Acabar sistema de login com tela de login com logout e criação/edição de avatae
 TODO: Ver animações no front
 TODO: Corrigir problema da cor do botão
 TODO: Colocar biblioteca de animação de div - colocar form da mesma biblioteca

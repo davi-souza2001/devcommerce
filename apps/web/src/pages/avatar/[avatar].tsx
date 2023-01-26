@@ -15,7 +15,7 @@ export default function Avatar() {
 			return alert('No clothing content')
 		} else if (user.id) {
 			const reqBody = { ...avatar, idUser: user.id }
-			UseFetch('http://localhost:3001/avatar/create', 'POST', reqBody)
+			UseFetch('http://localhost:3333/avatar/create', 'POST', reqBody)
 		} else {
 			return alert('No user')
 		}

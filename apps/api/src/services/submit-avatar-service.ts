@@ -61,24 +61,24 @@ export class SubmitAvatarService {
 		}
 
 		await this.avatarsRepository.create({
-			accessory,
+			accessory: accessory ?? '',
 			body,
-			circleColor,
+			circleColor: circleColor ?? '',
 			clothing,
-			clothingColor,
-			eyebrows,
-			eyes,
-			faceMask,
-			facialHair,
-			graphic,
-			hair,
-			hairColor,
-			hat,
-			hatColor,
+			clothingColor: clothingColor ?? '',
+			eyebrows: eyebrows ?? '',
+			eyes: eyes ?? '',
+			faceMask: faceMask ?? false,
+			facialHair: facialHair ?? '',
+			graphic: graphic ?? '',
+			hair: hair ?? '',
+			hairColor: hairColor ?? '',
+			hat: hat ?? '',
+			hatColor: hatColor ?? '',
 			idUser,
-			lipColor,
-			mouth,
-			skinTone
+			lipColor: lipColor ?? '',
+			mouth: mouth ?? '',
+			skinTone: skinTone ?? ''
 		})
 	}
 }

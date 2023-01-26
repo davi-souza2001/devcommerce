@@ -38,7 +38,7 @@ export function AuthProvider(props: any) {
 
 	function createAccount(user: User) {
 		createUserInFirebase(user.email, user.password ?? '')
-		UseFetch('http://localhost:3001/user/create', 'POST', {
+		UseFetch('http://localhost:3333/user/create', 'POST', {
 			email: user.email,
 			name: user.name
 		}).then(() => Router.push('/login'))
@@ -47,7 +47,7 @@ export function AuthProvider(props: any) {
 
 	function loginAccount(email: string, password: string) {
 		loginUserInFirebase(email, password)
-		UseFetch('http://localhost:3001/user/login', 'POST', { email })
+		UseFetch('http://localhost:3333/user/login', 'POST', { email })
 			.then(res => {
 				setUser({
 					id: res.id,
@@ -76,7 +76,7 @@ export function AuthProvider(props: any) {
 					email: userSearch.email ?? '',
 					name: ''
 				}
-				UseFetch('http://localhost:3001/user/login', 'POST', {
+				UseFetch('http://localhost:3333/user/login', 'POST', {
 					email: userSearch.email
 				}).then(userComplete => {
 					setUser({
