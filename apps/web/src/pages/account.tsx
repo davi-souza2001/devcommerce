@@ -18,34 +18,23 @@ export default function Account() {
 		<BackgroundField>
 			<TopBar />
 			<div className='h-5/6 w-full flex items-start justify-around'>
-				<div className='h-[320px] w-80 bg-slate-300 rounded-lg mt-10'>
-					<div className='h-2/4 w-full flex items-center justify-center'>
-						<Image src={Perfil} alt="Image Profile" height={150} width={150} className="rounded-full" />
+				<div className='h-5/6 w-10/12 bg-slate-300 rounded-lg mt-10'>
+					<div className='h-1/3 w-full flex items-center justify-between'>
+						<div className='h-full w-96 flex items-center justify-center bg-red-500'>
+							<Image alt='Image profile' src={Perfil} height={150} width={150} className='rounded-full' />
+							<p className='ml-5 text-lg font-semibold'>Davi Souza</p>
+						</div>
+						<div className='h-full w-96 flex items-center justify-center bg-red-500'>
+							<p className='text-lg font-medium cursor-pointer'>Edit your profile</p>
+						</div>
 					</div>
-					<div className='h-1/4 w-full flex items-center justify-center text-2xl font-semibold'>
-						<p>Davi Souza</p>
-					</div>
-					<div className='h-1/4 w-full flex items-center justify-center text-base font-medium border border-t-slate-400 rounded-lg'>
-						<p>Membro desde: janeiro, 2021 </p>
-					</div>
-				</div>
-				<div className='min-h-[320px] w-[800px] bg-slate-300 rounded-lg  mt-10'>
-					<div className='h-16 w-full flex items-center justify-start text-xl font-semibold p-4'>
-						<p>Seus dados:</p>
-					</div>
-					<div className='w-full flex flex-col items-center justify-start text-xl font-semibold p-4'>
-						<InputField placeHolder='Nome' type='string' className='w-full mb-5'
-							value={name}
-							onChange={(e) => setName(e.target.value)} />
-						<InputField placeHolder='E-mail' type='string' className='w-full mb-5'
-							value={email}
-							onChange={(e) => setEmail(e.target.value)}
-						/>
-						<ButtonField text='Alterar' className='w-32' />
-						<ButtonField text='Logout'
-							className='w-32'
-							onClick={logoutInFirebase}
-						/>
+					<div className='h-2/3 w-full flex items-center justify-center bg-yellow-500'>
+						<div className='h-full w-1/2 bg-blue-500'>
+							<p>Orders</p>
+						</div>
+						<div className='h-full w-1/2 flex items-start justify-center bg-purple-700'>
+							<p>Logout</p>
+						</div>
 					</div>
 				</div>
 			</div>
