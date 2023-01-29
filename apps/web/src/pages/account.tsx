@@ -28,12 +28,12 @@ export default function Account() {
 							<p className='text-lg font-medium cursor-pointer'>Edit your profile</p>
 						</div>
 					</div>
-					<div className='h-2/3 w-full flex items-center justify-center bg-yellow-500'>
+					<div className='h-2/3 w-full flex items-center justify-center'>
 						<div className='h-full w-1/2 bg-blue-500'>
 							<p>Orders</p>
 						</div>
-						<div className='h-full w-1/2 flex items-start justify-center bg-purple-700'>
-							<p>Logout</p>
+						<div className='h-full w-1/2 flex items-end justify-end'>
+							<ButtonField text='Logout' color='red' onClick={logoutInFirebase} />
 						</div>
 					</div>
 				</div>
