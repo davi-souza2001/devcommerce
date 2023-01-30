@@ -72,6 +72,7 @@ npx turbo link
 
 <!-- 
 TODO: Acabar sistema de login com tela de login com logout e criação/edição de avatae
+TODO: Colocar mensagens de erro de requisição
 TODO: Ver animações no front
 TODO: Corrigir problema da cor do botão
 TODO: Colocar biblioteca de animação de div - colocar form da mesma biblioteca
