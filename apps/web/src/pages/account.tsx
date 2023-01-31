@@ -8,7 +8,6 @@ import { InputField } from '../components/InputField'
 import { ButtonField } from '../components/ButtonField'
 import { BackgroundField } from '../components/BackgroundField'
 import UseAuth from '../service/hook/useAuth'
-import { idAvatarFormatterIn } from '../utils/idAvatarFormatter'
 
 export default function Account() {
 	const [name, setName] = useState('')
@@ -33,7 +32,7 @@ export default function Account() {
 							<Image alt='Image profile' src={Perfil} height={150} width={150} className='rounded-full' />
 							<p className='ml-5 text-lg font-semibold'>Davi Souza</p>
 							<p className='ml-5 text-xl font-semibold cursor-pointer'
-								onClick={() => Router.push(`/avatar/${idAvatarFormatterIn(user.email)}`)}
+								onClick={() => Router.push('/avatar')}
 							>
 								P
 							</p>
