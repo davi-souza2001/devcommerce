@@ -71,8 +71,7 @@ npx turbo link
 - [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
 
 <!-- 
-TODO: Colocar sistema de criar avatar
-TODO: Acabar sistema de login com tela de login com logout e criação/edição de avatae
+TODO: Terminar tela de perfil
 TODO: Colocar mensagens de erro de requisição (fazer toasted)
 TODO: Ver animações no front
 TODO: Corrigir problema da cor do botão
