@@ -83,6 +83,6 @@ TODO: Criar entidade de item comprado
 TODO: Criar entidade de carrinho
 TODO: Adicionar rotas de item e carrinho para front
 TODO: Adicionar função de adicionar itens no admin
+TODO: Adicionar edição de avatar
 TODO: Adicionar responsividade
-TODO: Colocar mensagens de erros das requisições no front
  -->

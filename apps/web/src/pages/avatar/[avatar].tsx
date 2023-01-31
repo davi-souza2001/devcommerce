@@ -18,6 +18,33 @@ export default function Avatar() {
 		UseFetch('http://localhost:3333/avatar/create', 'POST', reqBody)
 	}
 
+	function getAvatarExists() {
+		UseFetch('http://localhost:3333/avatar/get', 'POST', { id: user.id })
+			.then((avatarReceived: AvatarProps) => {
+				if (avatarReceived !== null) {
+					setAvatar({
+						accessory: avatarReceived.accessory,
+						body: avatarReceived.body,
+						circleColor: avatarReceived.circleColor,
+						clothing: avatarReceived.clothing,
+						clothingColor: avatarReceived.clothingColor ?? "green",
+						eyebrows: avatarReceived.eyebrows,
+						eyes: avatarReceived.eyes,
+						faceMask: avatarReceived.faceMask,
+						facialHair: avatarReceived.facialHair,
+						graphic: avatarReceived.graphic,
+						hair: avatarReceived.hair,
+						hairColor: avatarReceived.hairColor,
+						hat: avatarReceived.hat,
+						hatColor: avatarReceived.hatColor,
+						lipColor: avatarReceived.lipColor,
+						mouth: avatarReceived.mouth,
+						skinTone: avatarReceived.skinTone
+					})
+				}
+			})
+	}
+
 	useEffect(() => {
 		if (avatarSearch) {
 			setEmailUserAvatar(idAvatarFormatterOut(avatarSearch as string))
@@ -25,8 +52,12 @@ export default function Avatar() {
 
 	}, [avatarSearch])
 
+	useEffect(() => {
+		if (user.id) {
+			getAvatarExists()
+		}
 
-	console.log(avatar)
+	}, [user])
 
 	return (
 		<div className="h-screen w-screen bg-slate-200 overflow-y-auto">
