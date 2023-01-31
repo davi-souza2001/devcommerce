@@ -46,4 +46,14 @@ export class PrismaAvatars implements Avatars {
 			}
 		})
 	}
+
+	async get(id: string): Promise<AvatarCreateData | null> {
+		const avatar = await prisma.avatar.findFirst({
+			where: {
+				idUser: id
+			}
+		})
+
+		return avatar
+	}
 }

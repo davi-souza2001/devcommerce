@@ -81,4 +81,15 @@ export class SubmitAvatarService {
 			skinTone: skinTone ?? ''
 		})
 	}
+
+	async executeGet(id: string) {
+		if (!id) {
+			throw new Error('Id is required!')
+		}
+
+		const avatar = await this.avatarsRepository.get(id)
+
+		return avatar
+
+	}
 }

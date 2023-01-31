@@ -59,3 +59,17 @@ routesAvatar.post('/avatar/create', async (req, res) => {
 		return res.status(401).json({ message: error.message })
 	}
 })
+
+routesAvatar.post('/avatar/get', async (req, res) => {
+	const { id } = req.body
+
+	try {
+		const avatar = await submitAvatarService.executeGet(id)
+
+		return res.status(201).json(avatar)
+
+	} catch (error: any) {
+
+		return res.status(401).json({ message: error.message })
+	}
+})

@@ -21,4 +21,5 @@ export interface AvatarCreateData {
 
 export interface Avatars {
 	create: (data: AvatarCreateData) => Promise<void>
+	get: (id: string) => Promise<AvatarCreateData | null>
 }
