@@ -1,15 +1,15 @@
-import Link from "next/link";
-import { useState } from "react";
-import { BackgroundField } from "../components/BackgroundField";
-import { ButtonField } from "../components/ButtonField";
-import { InputField } from "../components/InputField";
-import UseAuth from "../service/hook/useAuth";
-import { Welcome } from "../components/Welcome";
-import { SocialMediaOption } from "../components/SocialMediaOption";
+import Link from "next/link"
+import { useState } from "react"
+import { BackgroundField } from "../components/BackgroundField"
+import { ButtonField } from "../components/ButtonField"
+import { InputField } from "../components/InputField"
+import UseAuth from "../service/hook/useAuth"
+import { Welcome } from "../components/Welcome"
+import { SocialMediaOption } from "../components/SocialMediaOption"
 
-import Google from '../../public/google.svg';
-import Facebook from '../../public/facebook.svg';
-import Apple from '../../public/apple.svg';
+import Google from '../../public/google.svg'
+import Facebook from '../../public/facebook.svg'
+import Apple from '../../public/apple.svg'
 
 export default function Login() {
 	const [email, setEmail] = useState('')
@@ -27,7 +27,7 @@ export default function Login() {
 				<Welcome />
 			</div>
 			<div className="h-full w-full md:w-1/2">
-				
+
 				<div className="h-14 md:h-1/4 w-full flex items-end justify-center text-xl md:text-4xl font-semibold gap-2">
 					<h1>ENTRAR</h1>
 					<p className="text-base md:text-xl font-normal">ou</p>

@@ -1,25 +1,32 @@
-import { useState } from "react";
-import { AvatarProps, BigHead } from "@bigheads/core";
-import { AvatarOptions } from "../../utils/avatarOptions";
-import UseAuth from "../../service/hook/useAuth";
-import UseFetch from "../../service/hook/useFetch";
+import { useEffect, useState } from "react"
+import { AvatarProps, BigHead } from "@bigheads/core"
+import { AvatarOptions } from "../../utils/avatarOptions"
+import UseAuth from "../../service/hook/useAuth"
+import UseFetch from "../../service/hook/useFetch"
+import { useRouter } from "next/router"
+import { idAvatarFormatterOut } from "../../utils/idAvatarFormatter"
 
 export default function Avatar() {
 	const [avatar, setAvatar] = useState<AvatarProps>({})
+	const [emailUserAvatar, setEmailUserAvatar] = useState('')
 	const { user } = UseAuth()
+	const router = useRouter()
+	const avatarSearch = router.query.avatar
 
 	function handleSubmitAvatar() {
-		if (!avatar.body) {
-			return alert('No body content')
-		} else if (!avatar.clothing) {
-			return alert('No clothing content')
-		} else if (user.id) {
-			const reqBody = { ...avatar, idUser: user.id }
-			UseFetch('http://localhost:3333/avatar/create', 'POST', reqBody)
-		} else {
-			return alert('No user')
-		}
+		const reqBody = { ...avatar, idUser: user.id }
+		UseFetch('http://localhost:3333/avatar/create', 'POST', reqBody)
 	}
+
+	useEffect(() => {
+		if (avatarSearch) {
+			setEmailUserAvatar(idAvatarFormatterOut(avatarSearch as string))
+		}
+
+	}, [avatarSearch])
+
+
+	console.log(avatar)
 
 	return (
 		<div className="h-screen w-screen bg-slate-200 overflow-y-auto">

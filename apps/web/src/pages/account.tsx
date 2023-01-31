@@ -1,12 +1,14 @@
 import Image from 'next/image'
+import Router from 'next/router'
+import { useEffect, useState } from 'react'
 
-import { TopBar } from "../components/TopBar";
-import Perfil from '../../public/Perfil.jpg';
-import { InputField } from '../components/InputField';
-import { ButtonField } from '../components/ButtonField';
-import { BackgroundField } from '../components/BackgroundField';
-import { useEffect, useState } from 'react';
-import UseAuth from '../service/hook/useAuth';
+import { TopBar } from "../components/TopBar"
+import Perfil from '../../public/Perfil.jpg'
+import { InputField } from '../components/InputField'
+import { ButtonField } from '../components/ButtonField'
+import { BackgroundField } from '../components/BackgroundField'
+import UseAuth from '../service/hook/useAuth'
+import { idAvatarFormatterIn } from '../utils/idAvatarFormatter'
 
 export default function Account() {
 	const [name, setName] = useState('')
@@ -30,6 +32,11 @@ export default function Account() {
 						<div className='h-full w-96 flex items-center justify-center'>
 							<Image alt='Image profile' src={Perfil} height={150} width={150} className='rounded-full' />
 							<p className='ml-5 text-lg font-semibold'>Davi Souza</p>
+							<p className='ml-5 text-xl font-semibold cursor-pointer'
+								onClick={() => Router.push(`/avatar/${idAvatarFormatterIn(user.email)}`)}
+							>
+								P
+							</p>
 						</div>
 						<div className='h-full w-96 flex items-center justify-center'>
 							<ButtonField text='Logout' color='red' onClick={logoutInFirebase} className='p-5' />

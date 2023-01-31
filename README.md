@@ -73,7 +73,7 @@ npx turbo link
 <!-- 
 TODO: Colocar sistema de criar avatar
 TODO: Acabar sistema de login com tela de login com logout e criação/edição de avatae
-TODO: Colocar mensagens de erro de requisição
+TODO: Colocar mensagens de erro de requisição (fazer toasted)
 TODO: Ver animações no front
 TODO: Corrigir problema da cor do botão
 TODO: Colocar biblioteca de animação de div - colocar form da mesma biblioteca

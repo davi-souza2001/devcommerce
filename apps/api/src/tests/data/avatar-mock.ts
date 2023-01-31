@@ -1,5 +1,5 @@
-import { AvatarCreateData, Avatars } from "../../repositories/avatars";
-import { UserCreateData, Users } from "../../repositories/users";
+import { AvatarCreateData, Avatars } from "../../repositories/avatars"
+import { UserCreateData, Users } from "../../repositories/users"
 
 export class AvatarsMock implements Avatars {
 	private avatars: AvatarCreateData[] = []

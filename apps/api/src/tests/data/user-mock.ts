@@ -1,4 +1,4 @@
-import { UserCreateData, Users } from "../../repositories/users";
+import { UserCreateData, Users } from "../../repositories/users"
 
 export class UsersMock implements Users {
 	private users: UserCreateData[] = []

@@ -1,15 +1,15 @@
-import Link from "next/link";
-import { useState } from "react";
-import { BackgroundField } from "../components/BackgroundField";
-import { ButtonField } from "../components/ButtonField";
-import { InputField } from "../components/InputField";
-import UseAuth from "../service/hook/useAuth";
-import { Welcome } from "../components/Welcome";
-import { SocialMediaOption } from "../components/SocialMediaOption";
+import Link from "next/link"
+import { useState } from "react"
+import { BackgroundField } from "../components/BackgroundField"
+import { ButtonField } from "../components/ButtonField"
+import { InputField } from "../components/InputField"
+import UseAuth from "../service/hook/useAuth"
+import { Welcome } from "../components/Welcome"
+import { SocialMediaOption } from "../components/SocialMediaOption"
 
-import Google from '../../public/google.svg';
-import Facebook from '../../public/facebook.svg';
-import Apple from '../../public/apple.svg';
+import Google from '../../public/google.svg'
+import Facebook from '../../public/facebook.svg'
+import Apple from '../../public/apple.svg'
 
 export default function Cadastro() {
 	const [name, setName] = useState('')
