@@ -71,18 +71,15 @@ npx turbo link
 - [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
 
 <!-- 
-TODO: Terminar tela de perfil - função de editar nome do usuário
 TODO: Colocar mensagens de erro de requisição (fazer toasted)
 TODO: Corrigir cor do botão do front
+TODO: Fazer context para avatar
+TODO: Melhorar forms da aplicação
 TODO: Ver animações no front
-TODO: Corrigir problema da cor do botão
-TODO: Colocar biblioteca de animação de div - colocar form da mesma biblioteca
-TODO: Fazer responsividade
-TODO: Compartilhar componentes para projeto admin
-TODO: Criar entidade de item comprado
-TODO: Criar entidade de carrinho
+TODO: Adicionar cypress
+TODO: Criar entidade de produto
+TODO: Criar entidade de produtoComprado
 TODO: Adicionar rotas de item e carrinho para front
-TODO: Adicionar função de adicionar itens no admin
-TODO: Adicionar edição de avatar
+TODO: Acabar testes no backend
 TODO: Adicionar responsividade
  -->

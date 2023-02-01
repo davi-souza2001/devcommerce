@@ -33,4 +33,18 @@ export class SubmitUserService {
 
 		return user
 	}
+
+	async executeEditUser(request: SubmitUserServiceRequest) {
+		const { name, email } = request
+
+		if (!name) {
+			throw new Error('Name is required!')
+		}
+
+		if (!email) {
+			throw new Error('Email is required!')
+		}
+
+		await this.usersRepository.editUser({ email, name })
+	}
 }

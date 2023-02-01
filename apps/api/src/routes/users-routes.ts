@@ -38,3 +38,20 @@ routesUser.post('/user/login', async (req, res) => {
 		return res.status(401).json({ message: error.message })
 	}
 })
+
+routesUser.post('/user/update', async (req, res) => {
+	const { name, email } = req.body
+
+	try {
+		await submitUserService.executeEditUser({
+			name,
+			email
+		})
+
+		return res.status(201).json({ message: 'User edited!' })
+
+	} catch (error: any) {
+
+		return res.status(401).json({ message: error.message })
+	}
+})

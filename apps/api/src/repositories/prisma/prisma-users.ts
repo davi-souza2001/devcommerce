@@ -21,4 +21,16 @@ export class PrismaUsers implements Users {
 
 		return user
 	}
+
+	async editUser(data: UserCreateData): Promise<void> {
+		await prisma.user.update({
+			where: {
+				email: data.email
+			},
+			data: {
+				name: data.name,
+				email: data.email
+			}
+		})
+	}
 }

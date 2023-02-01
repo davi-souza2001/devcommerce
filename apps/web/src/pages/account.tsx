@@ -47,6 +47,13 @@ export default function Account() {
 			})
 	}
 
+	function updateUser(e: any) {
+		e.preventDefault()
+		const user = { name, email }
+
+		UseFetch('http://localhost:3333/user/update', 'POST', user)
+	}
+
 	useEffect(() => {
 		if (user) {
 			setEmail(user.email)
@@ -109,7 +116,9 @@ export default function Account() {
 						</div>
 						<div className='h-full w-1/2 flex items-center justify-center flex-col'>
 							<p className='text-xl font-medium'>Edit your profile</p>
-							<form className='flex items-center justify-center flex-col mt-5'>
+							<form className='flex items-center justify-center flex-col mt-5'
+								onSubmit={(e) => updateUser(e)}
+							>
 								<InputField type='string' placeHolder='name' onChange={(e) => setName(e.target.value)} value={name} className='mb-5 w-96' />
 								<InputField type='string' placeHolder='email' readonly onChange={(e) => setEmail(e.target.value)} value={email} className='mb-5 w-96 bg-slate-200' />
 								<ButtonField type='submit' text='Submit' color='green' className='w-full' />
