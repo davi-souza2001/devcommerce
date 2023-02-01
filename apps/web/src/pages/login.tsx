@@ -22,13 +22,13 @@ export default function Login() {
 	}
 
 	return (
-		<BackgroundField className="flex flex-col md:flex-row items-center justify-center overflow-hidden">
+		<BackgroundField className="flex flex-col md:flex-row items-center justify-center">
 			<div className="h-1/3 md:h-full w-full md:w-3/4 bg-gradient-to-r from-purple-500 to-purple-600 flex flex-col gap-3 items-center justify-center text-white text-xl md:text-7xl">
 				<Welcome />
 			</div>
-			<div className="h-full w-full md:w-1/2">
+			<div className="h-full w-full md:w-1/2 bg-zinc-200">
 
-				<div className="h-14 md:h-1/4 w-full flex items-end justify-center text-xl md:text-4xl font-semibold gap-2">
+				<div className="h-12 md:h-1/4 w-full flex items-end justify-center text-xl md:text-4xl font-semibold gap-2">
 					<h1>ENTRAR</h1>
 					<p className="text-base md:text-xl font-normal">ou</p>
 					<Link href='/cadastro' className="text-green-500 hover:underline text-base md:text-xl">Cadastrar-se</Link>
@@ -65,7 +65,7 @@ export default function Login() {
 					</form>
 				</div>
 
-				<div className="mt-2 w-full flex items-center justify-start flex-col">
+				<div className="my-5 w-full flex items-center justify-start flex-col">
 					<ButtonField text="Entrar" className="w-1/2 md:w-96" onClick={handleLogin} />
 				</div>
 

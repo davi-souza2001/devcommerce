@@ -5,7 +5,7 @@ interface BackgroundField{
 
 export function BackgroundField(props: BackgroundField){
 	return (
-		<div className={`h-screen w-screen bg-slate-200 ${props.className}`}>
+		<div className={`h-screen w-screen bg-gradient-to-r from-purple-500 to-purple-600 ${props.className}`}>
 			{props.children}
 		</div>
 	)

@@ -51,12 +51,10 @@ export default function Avatar() {
 	}, [user])
 
 	return (
-		<div className="h-screen w-screen bg-slate-200 overflow-y-auto">
-			<div className="h-20 w-full flex items-center justify-center text-4xl font-semibold">
-				<h1>Edit your avatar</h1>
-			</div>
-			<div className="h-64 w-full flex items-center justify-center bg-purple-500">
-				<div className="h-80 w-80 mb-12">
+		<div className="h-screen w-full bg-slate-200 overflow-y-auto">
+			<div className="h-[50%] w-full flex flex-col items-center justify-center bg-gradient-to-r from-purple-500 to-purple-600 shadow-xl">
+				<h1 className="text-4xl font-semibold text-white">Edit your avatar</h1>
+				<div className="h-80 w-80">
 					<BigHead
 						accessory={avatar.accessory ?? 'none'}
 						body={avatar.body ?? 'chest'}
@@ -87,173 +85,253 @@ export default function Avatar() {
 							<p>Options</p>
 						</div>
 						<form className="w-full grid grid-cols-4 gap-4 p-5">
-							<select className="h-16 w-72 rounded-lg outline-none text-gray-500 font-bold"
-								onChange={(e: any) => setAvatar({ ...avatar, accessory: e.target.value })}
-							>
-								<option disabled>Accessory</option>
-								{AvatarOptions.accessory().map(data => {
-									return (
-										<option value={data} key={data}>
-											{data}
-										</option>
-									)
-								})}
-							</select>
-							<select className="h-16 w-72 rounded-lg outline-none text-gray-500 font-bold"
-								onChange={(e: any) => setAvatar({ ...avatar, body: e.target.value })}
-							>
-								<option disabled>Body</option>
-								{AvatarOptions.body().map(data => {
-									return (
-										<option value={data} key={data}>{data}</option>
-									)
-								})}
-							</select>
-							<select className="h-16 w-72 rounded-lg outline-none text-gray-500 font-bold"
-								onChange={(e: any) => setAvatar({ ...avatar, clothing: e.target.value })}
-							>
-								<option disabled>Clothing</option>
-								{AvatarOptions.clothing().map(data => {
-									return (
-										<option value={data} key={data}>{data}</option>
-									)
-								})}
-							</select>
-							<select className="h-16 w-72 rounded-lg outline-none text-gray-500 font-bold"
-								onChange={(e: any) => setAvatar({ ...avatar, clothingColor: e.target.value })}
-							>
-								<option disabled>Clothing Color</option>
-								{AvatarOptions.clothingColor().map(data => {
-									return (
-										<option value={data} key={data}>{data}</option>
-									)
-								})}
-							</select>
-							<select className="h-16 w-72 rounded-lg outline-none text-gray-500 font-bold"
-								onChange={(e: any) => setAvatar({ ...avatar, eyebrows: e.target.value })}
-							>
-								<option disabled>Eyebrows</option>
-								{AvatarOptions.eyebrows().map(data => {
-									return (
-										<option value={data} key={data}>{data}</option>
-									)
-								})}
-							</select>
-							<select className="h-16 w-72 rounded-lg outline-none text-gray-500 font-bold"
-								onChange={(e: any) => setAvatar({ ...avatar, eyes: e.target.value })}
-							>
-								<option disabled>Eyes</option>
-								{AvatarOptions.eyes().map(data => {
-									return (
-										<option value={data} key={data}>{data}</option>
-									)
-								})}
-							</select>
-							<select className="h-16 w-72 rounded-lg outline-none text-gray-500 font-bold"
-								onChange={(e: any) => {
-									if (e.target.value === 'true') {
-										setAvatar({ ...avatar, faceMask: true })
-									} else {
-										setAvatar({ ...avatar, faceMask: false })
-									}
-								}}
-							>
-								<option disabled>FaceMask</option>
-								<option value={'false'} >False</option>
-								<option value={'true'} >True</option>
-							</select>
-							<select className="h-16 w-72 rounded-lg outline-none text-gray-500 font-bold"
-								onChange={(e: any) => setAvatar({ ...avatar, facialHair: e.target.value })}
-							>
-								<option disabled>Facial Hair</option>
-								{AvatarOptions.facialHair().map((data, index) => {
-									return (
-										<option value={data} key={index}>{data}</option>
-									)
-								})}
-							</select>
-							<select className="h-16 w-72 rounded-lg outline-none text-gray-500 font-bold"
-								onChange={(e: any) => setAvatar({ ...avatar, graphic: e.target.value })}
-							>
-								<option disabled>Tec</option>
-								{AvatarOptions.graphic().map((data, index) => {
-									return (
-										<option value={data} key={index}>{data}</option>
-									)
-								})}
-							</select>
-							<select className="h-16 w-72 rounded-lg outline-none text-gray-500 font-bold"
-								onChange={(e: any) => setAvatar({ ...avatar, hair: e.target.value })}
-							>
-								<option disabled>Hair</option>
-								{AvatarOptions.hair().map((data, index) => {
-									return (
-										<option value={data} key={index}>{data}</option>
-									)
-								})}
-							</select>
-							<select className="h-16 w-72 rounded-lg outline-none text-gray-500 font-bold"
-								onChange={(e: any) => setAvatar({ ...avatar, hairColor: e.target.value })}
-							>
-								<option disabled>Hair Color</option>
-								{AvatarOptions.hairColor().map((data, index) => {
-									return (
-										<option value={data} key={index}>{data}</option>
-									)
-								})}
-							</select>
-							<select className="h-16 w-72 rounded-lg outline-none text-gray-500 font-bold"
-								onChange={(e: any) => setAvatar({ ...avatar, hat: e.target.value })}
-							>
-								<option disabled>Hat</option>
-								{AvatarOptions.hat().map((data, index) => {
-									return (
-										<option value={data} key={index}>{data}</option>
-									)
-								})}
-							</select>
-							<select className="h-16 w-72 rounded-lg outline-none text-gray-500 font-bold"
-								onChange={(e: any) => setAvatar({ ...avatar, hatColor: e.target.value })}
-							>
-								<option disabled>Hat Color</option>
-								{AvatarOptions.hatColor().map((data, index) => {
-									return (
-										<option value={data} key={index}>{data}</option>
-									)
-								})}
-							</select>
-							<select className="h-16 w-72 rounded-lg outline-none text-gray-500 font-bold"
-								onChange={(e: any) => setAvatar({ ...avatar, lipColor: e.target.value })}
-							>
-								<option disabled>Lip Color</option>
-								{AvatarOptions.lipColor().map((data, index) => {
-									return (
-										<option value={data} key={index}>{data}</option>
-									)
-								})}
-							</select>
-							<select className="h-16 w-72 rounded-lg outline-none text-gray-500 font-bold"
-								onChange={(e: any) => setAvatar({ ...avatar, mouth: e.target.value })}
-							>
-								<option disabled>Mouth</option>
-								{AvatarOptions.mouth().map((data, index) => {
-									return (
-										<option value={data} key={index}>{data}</option>
-									)
-								})}
-							</select>
-							<select className="h-16 w-72 rounded-lg outline-none text-gray-500 font-bold"
-								onChange={(e: any) => setAvatar({ ...avatar, skinTone: e.target.value })}
-							>
-								<option disabled>Skin Tone</option>
-								{AvatarOptions.skinTone().map((data, index) => {
-									return (
-										<option value={data} key={index}>{data}</option>
-									)
-								})}
-							</select>
+
+						<div className="flex flex-col">
+								<span className="mb-4">Acessory:</span>
+
+								<select className="h-16 w-72 rounded-lg cursor-pointer border-b-4 border-transparent hover:border-purple-500 transition-all hover:shadow-lg p-4 outline-none text-gray-500 font-bold"
+									onChange={(e: any) => setAvatar({ ...avatar, accessory: e.target.value })}
+								>
+									<option disabled>Accessory</option>
+									{AvatarOptions.accessory().map(data => {
+										return (
+											<option value={data} key={data}>
+												{data}
+											</option>
+										)
+									})}
+								</select>
+							</div>
+							
+							<div className="flex flex-col">
+								<span className="mb-4">Body:</span>
+
+								<select className="h-16 w-72 rounded-lg cursor-pointer border-b-4 border-transparent hover:border-purple-500 transition-all hover:shadow-lg p-4 outline-none text-gray-500 font-bold"
+									onChange={(e: any) => setAvatar({ ...avatar, body: e.target.value })}
+								>
+									<option disabled>Body</option>
+									{AvatarOptions.body().map(data => {
+										return (
+											<option value={data} key={data}>{data}</option>
+										)
+									})}
+								</select>
+							</div>
+
+							<div className="flex flex-col">
+								<span className="mb-4">Clothing:</span>
+
+								<select className="h-16 w-72 rounded-lg cursor-pointer border-b-4 border-transparent hover:border-purple-500 transition-all hover:shadow-lg p-4 outline-none text-gray-500 font-bold"
+									onChange={(e: any) => setAvatar({ ...avatar, clothing: e.target.value })}
+								>
+									<option disabled>Clothing</option>
+									{AvatarOptions.clothing().map(data => {
+										return (
+											<option value={data} key={data}>{data}</option>
+										)
+									})}
+								</select>
+							</div>
+
+							<div className="flex flex-col">
+								<span className="mb-4">Clothing Color:</span>
+
+								<select className="h-16 w-72 rounded-lg cursor-pointer border-b-4 border-transparent hover:border-purple-500 transition-all hover:shadow-lg p-4 outline-none text-gray-500 font-bold"
+									onChange={(e: any) => setAvatar({ ...avatar, clothingColor: e.target.value })}
+								>
+									<option disabled>Clothing Color</option>
+									{AvatarOptions.clothingColor().map(data => {
+										return (
+											<option value={data} key={data}>{data}</option>
+										)
+									})}
+								</select>
+							</div>
+
+							<div className="flex flex-col">
+								<span className="mb-4">Eyebrows:</span>
+
+								<select className="h-16 w-72 rounded-lg cursor-pointer border-b-4 border-transparent hover:border-purple-500 transition-all hover:shadow-lg p-4 outline-none text-gray-500 font-bold"
+									onChange={(e: any) => setAvatar({ ...avatar, eyebrows: e.target.value })}
+								>
+									<option disabled>Eyebrows</option>
+									{AvatarOptions.eyebrows().map(data => {
+										return (
+											<option value={data} key={data}>{data}</option>
+										)
+									})}
+								</select>
+							</div>
+
+							<div className="flex flex-col">
+								<span className="mb-4">Eyes:</span>
+
+								<select className="h-16 w-72 rounded-lg cursor-pointer border-b-4 border-transparent hover:border-purple-500 transition-all hover:shadow-lg p-4 outline-none text-gray-500 font-bold"
+									onChange={(e: any) => setAvatar({ ...avatar, eyes: e.target.value })}
+								>
+									<option disabled>Eyes</option>
+									{AvatarOptions.eyes().map(data => {
+										return (
+											<option value={data} key={data}>{data}</option>
+										)
+									})}
+								</select>
+							</div>
+
+							<div className="flex flex-col">
+								<span className="mb-4">Mask:</span>
+
+								<select className="h-16 w-72 rounded-lg cursor-pointer border-b-4 border-transparent hover:border-purple-500 transition-all hover:shadow-lg p-4 outline-none text-gray-500 font-bold"
+									onChange={(e: any) => {
+										if (e.target.value === 'true') {
+											setAvatar({ ...avatar, faceMask: true })
+										} else {
+											setAvatar({ ...avatar, faceMask: false })
+										}
+									}}
+								>
+									<option disabled>FaceMask</option>
+									<option value={'false'} >False</option>
+									<option value={'true'} >True</option>
+								</select>
+							</div>
+
+							<div className="flex flex-col">
+								<span className="mb-4">Facial Hair:</span>
+
+								<select className="h-16 w-72 rounded-lg cursor-pointer border-b-4 border-transparent hover:border-purple-500 transition-all hover:shadow-lg p-4 outline-none text-gray-500 font-bold"
+									onChange={(e: any) => setAvatar({ ...avatar, facialHair: e.target.value })}
+								>
+									<option disabled>Facial Hair</option>
+									{AvatarOptions.facialHair().map((data, index) => {
+										return (
+											<option value={data} key={index}>{data}</option>
+										)
+									})}
+								</select>
+							</div>
+
+							<div className="flex flex-col">
+								<span className="mb-4">Tech:</span>
+
+								<select className="h-16 w-72 rounded-lg cursor-pointer border-b-4 border-transparent hover:border-purple-500 transition-all hover:shadow-lg p-4 outline-none text-gray-500 font-bold"
+									onChange={(e: any) => setAvatar({ ...avatar, graphic: e.target.value })}
+								>
+									<option disabled>Tec</option>
+									{AvatarOptions.graphic().map((data, index) => {
+										return (
+											<option value={data} key={index}>{data}</option>
+										)
+									})}
+								</select>
+							</div>
+
+							<div className="flex flex-col">
+								<span className="mb-4">Hair:</span>
+
+								<select className="h-16 w-72 rounded-lg cursor-pointer border-b-4 border-transparent hover:border-purple-500 transition-all hover:shadow-lg p-4 outline-none text-gray-500 font-bold"
+									onChange={(e: any) => setAvatar({ ...avatar, hair: e.target.value })}
+								>
+									<option disabled>Hair</option>
+									{AvatarOptions.hair().map((data, index) => {
+										return (
+											<option value={data} key={index}>{data}</option>
+										)
+									})}
+								</select>
+							</div>
+
+							<div className="flex flex-col">
+								<span className="mb-4">Hair Color:</span>
+
+								<select className="h-16 w-72 rounded-lg cursor-pointer border-b-4 border-transparent hover:border-purple-500 transition-all hover:shadow-lg p-4 outline-none text-gray-500 font-bold"
+									onChange={(e: any) => setAvatar({ ...avatar, hairColor: e.target.value })}
+								>
+									<option disabled>Hair Color</option>
+									{AvatarOptions.hairColor().map((data, index) => {
+										return (
+											<option value={data} key={index}>{data}</option>
+										)
+									})}
+								</select>
+							</div>
+
+							<div className="flex flex-col">
+								<span className="mb-4">Hat:</span>
+
+								<select className="h-16 w-72 rounded-lg cursor-pointer border-b-4 border-transparent hover:border-purple-500 transition-all hover:shadow-lg p-4 outline-none text-gray-500 font-bold"
+									onChange={(e: any) => setAvatar({ ...avatar, hat: e.target.value })}
+								>
+									<option disabled>Hat</option>
+									{AvatarOptions.hat().map((data, index) => {
+										return (
+											<option value={data} key={index}>{data}</option>
+										)
+									})}
+								</select>
+							</div>
+
+							<div className="flex flex-col">
+								<span className="mb-4">Hat Color:</span>
+
+								<select className="h-16 w-72 rounded-lg cursor-pointer border-b-4 border-transparent hover:border-purple-500 transition-all hover:shadow-lg p-4 outline-none text-gray-500 font-bold"
+									onChange={(e: any) => setAvatar({ ...avatar, hatColor: e.target.value })}
+								>
+									<option disabled>Hat Color</option>
+									{AvatarOptions.hatColor().map((data, index) => {
+										return (
+											<option value={data} key={index}>{data}</option>
+										)
+									})}
+								</select>
+							</div>
+
+							<div className="flex flex-col">
+								<span className="mb-4">Lip Color:</span>
+
+								<select className="h-16 w-72 rounded-lg cursor-pointer border-b-4 border-transparent hover:border-purple-500 transition-all hover:shadow-lg p-4 outline-none text-gray-500 font-bold"
+									onChange={(e: any) => setAvatar({ ...avatar, lipColor: e.target.value })}
+								>
+									<option disabled>Lip Color</option>
+									{AvatarOptions.lipColor().map((data, index) => {
+										return (
+											<option value={data} key={index}>{data}</option>
+										)
+									})}
+								</select>
+							</div>
+
+							<div className="flex flex-col">
+								<span className="mb-4">Mouth:</span>
+
+								<select className="h-16 w-72 rounded-lg cursor-pointer border-b-4 border-transparent hover:border-purple-500 transition-all hover:shadow-lg p-4 outline-none text-gray-500 font-bold"
+									onChange={(e: any) => setAvatar({ ...avatar, mouth: e.target.value })}
+								>
+									<option disabled>Mouth</option>
+									{AvatarOptions.mouth().map((data, index) => {
+										return (
+											<option value={data} key={index}>{data}</option>
+										)
+									})}
+								</select>
+							</div>
+
+							<div className="flex flex-col">
+								<span className="mb-4">Skin Tone:</span>
+
+								<select className="h-16 w-72 rounded-lg cursor-pointer border-b-4 border-transparent hover:border-purple-500 transition-all hover:shadow-lg p-4 outline-none text-gray-500 font-bold"
+									onChange={(e: any) => setAvatar({ ...avatar, skinTone: e.target.value })}
+								>
+									<option disabled>Skin Tone</option>
+									{AvatarOptions.skinTone().map((data, index) => {
+										return (
+											<option value={data} key={index}>{data}</option>
+										)
+									})}
+								</select>
+							</div>
 						</form>
-						<button className="h-12 w-72 flex items-center justify-center bg-green-500 rounded-lg text-xl font-semibold text-slate-200 my-5"
+						<button className="h-12 w-[10%] my-6 flex items-center justify-center rounded-lg text-xl font-semibold text-white transition-all bg-green-500 hover:bg-green-600"
 							onClick={() => handleSubmitAvatar()}
 						>
 							Submit
