@@ -71,8 +71,9 @@ npx turbo link
 - [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
 
 <!-- 
-TODO: Terminar tela de perfil
+TODO: Terminar tela de perfil - função de editar nome do usuário
 TODO: Colocar mensagens de erro de requisição (fazer toasted)
+TODO: Corrigir cor do botão do front
 TODO: Ver animações no front
 TODO: Corrigir problema da cor do botão
 TODO: Colocar biblioteca de animação de div - colocar form da mesma biblioteca

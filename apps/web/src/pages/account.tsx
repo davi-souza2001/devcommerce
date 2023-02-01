@@ -1,6 +1,7 @@
 import Router from 'next/router'
 import { useEffect, useState } from 'react'
 import { AvatarProps, BigHead } from '@bigheads/core'
+import { HiPencil } from "react-icons/hi";
 
 import { TopBar } from "../components/TopBar"
 import { InputField } from '../components/InputField'
@@ -95,7 +96,7 @@ export default function Account() {
 							<p className='ml-5 text-xl font-semibold cursor-pointer'
 								onClick={() => Router.push('/avatar')}
 							>
-								P
+								<HiPencil />
 							</p>
 						</div>
 						<div className='h-full w-96 flex items-center justify-center'>
@@ -110,7 +111,7 @@ export default function Account() {
 							<p className='text-xl font-medium'>Edit your profile</p>
 							<form className='flex items-center justify-center flex-col mt-5'>
 								<InputField type='string' placeHolder='name' onChange={(e) => setName(e.target.value)} value={name} className='mb-5 w-96' />
-								<InputField type='string' placeHolder='email' onChange={(e) => setEmail(e.target.value)} value={email} className='mb-5 w-96' />
+								<InputField type='string' placeHolder='email' readonly onChange={(e) => setEmail(e.target.value)} value={email} className='mb-5 w-96 bg-slate-200' />
 								<ButtonField type='submit' text='Submit' color='green' className='w-full' />
 							</form>
 						</div>

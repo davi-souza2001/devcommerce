@@ -6,6 +6,7 @@ interface InputFieldProps {
 	className?: string
 	value: string
 	onChange: ChangeEventHandler<HTMLInputElement>
+	readonly?: boolean
 }
 
 export function InputField(props: InputFieldProps) {
@@ -17,6 +18,7 @@ export function InputField(props: InputFieldProps) {
 			placeholder={props.placeHolder}
 			onChange={props.onChange}
 			value={props.value}
+			readOnly={props.readonly ?? false}
 		/>
 	)
 }
