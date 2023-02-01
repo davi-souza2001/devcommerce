@@ -1,7 +1,7 @@
 import Router from 'next/router'
 import { useEffect, useState } from 'react'
 import { AvatarProps, BigHead } from '@bigheads/core'
-import { HiPencil } from "react-icons/hi";
+import { HiPencil } from "react-icons/hi"
 
 import { TopBar } from "../components/TopBar"
 import { InputField } from '../components/InputField'
