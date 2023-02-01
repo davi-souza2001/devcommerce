@@ -72,9 +72,9 @@ npx turbo link
 
 <!-- 
 TODO: Colocar mensagens de erro de requisição (fazer toasted)
+TODO: Melhorar forms da aplicação
 TODO: Corrigir cor do botão do front
 TODO: Fazer context para avatar
-TODO: Melhorar forms da aplicação
 TODO: Ver animações no front
 TODO: Adicionar cypress
 TODO: Criar entidade de produto
