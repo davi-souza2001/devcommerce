@@ -41,8 +41,7 @@ export function AuthProvider(props: any) {
 		UseFetch('http://localhost:3333/user/create', 'POST', {
 			email: user.email,
 			name: user.name
-		}).then(() => Router.push('/login'))
-			.catch(err => console.log(err))
+		}).catch(err => console.log(err))
 	}
 
 	function loginAccount(email: string, password: string) {
@@ -56,7 +55,7 @@ export function AuthProvider(props: any) {
 				})
 				Router.push('/')
 			})
-			.catch(err => console.log(err))
+			.catch(err => console.log(err.message))
 	}
 
 	function createUserInFirebase(email: string, password: string) {

@@ -33,7 +33,7 @@ export default function Cadastro() {
 			</div>
 			<div className="h-full w-full md:w-1/2">
 
-			<div className="h-14 md:h-1/4 w-full flex items-end justify-center text-xl md:text-4xl font-semibold gap-2">
+				<div className="h-14 md:h-1/4 w-full flex items-end justify-center text-xl md:text-4xl font-semibold gap-2">
 					<h1>CADASTRAR</h1>
 					<p className="text-base md:text-xl font-normal">ou</p>
 					<Link href='/login' className="text-green-500 hover:underline text-base md:text-xl">Entrar</Link>
