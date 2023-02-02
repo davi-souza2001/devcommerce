@@ -10,13 +10,14 @@ import { SocialMediaOption } from "../components/SocialMediaOption"
 import Google from '../../public/google.svg'
 import Facebook from '../../public/facebook.svg'
 import Apple from '../../public/apple.svg'
+import { Toast } from "../components/Toast"
 
 export default function Cadastro() {
 	const [name, setName] = useState('')
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 
-	const { createAccount } = UseAuth()
+	const { createAccount, } = UseAuth()
 
 	function handleCreate() {
 		createAccount({
@@ -32,13 +33,12 @@ export default function Cadastro() {
 				<Welcome />
 			</div>
 			<div className="h-full w-full md:w-1/2">
-
 				<div className="h-14 md:h-1/4 w-full flex items-end justify-center text-xl md:text-4xl font-semibold gap-2">
 					<h1>CADASTRAR</h1>
 					<p className="text-base md:text-xl font-normal">ou</p>
 					<Link href='/login' className="text-green-500 hover:underline text-base md:text-xl">Entrar</Link>
 				</div>
-
+				<Toast />
 				<div className="mt-8 md:mt-0 md:h-1/3 w-full flex items-center">
 					<form className="h-full w-full flex items-center justify-center flex-col">
 						<InputField
