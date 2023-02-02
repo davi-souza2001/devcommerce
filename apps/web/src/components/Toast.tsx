@@ -1,5 +1,4 @@
 import { Alert, Snackbar } from "@mui/material";
-import { useState } from "react";
 import UseToast from "../service/hook/useToast";
 
 export function Toast() {

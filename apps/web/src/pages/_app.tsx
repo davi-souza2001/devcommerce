@@ -5,15 +5,15 @@ import '../styles/globals.css'
 
 function App({ Component, pageProps }: any) {
 	return (
-		<AuthProvider>
-			<ToastProvider>
+		<ToastProvider>
+			<AuthProvider>
 				<Head>
 					<link rel="icon" type="svg" sizes="32x32" href="/logo.svg" />
 					<title>JoGeeker</title>
 				</Head>
 				<Component {...pageProps} />
-			</ToastProvider>
-		</AuthProvider>
+			</AuthProvider>
+		</ToastProvider>
 	)
 }
 

@@ -1,6 +1,7 @@
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth'
 import Router from 'next/router'
 import { createContext, useEffect, useState } from 'react'
+
 import { auth } from '../../firebase'
 import UseFetch from '../hook/useFetch'
 import UseToast from '../hook/useToast'
@@ -40,15 +41,15 @@ export function AuthProvider(props: any) {
 
 	function createAccount(user: User) {
 		createUserInFirebase(user.email, user.password ?? '')
-		// UseFetch('http://localhost:3333/user/create', 'POST', {
-		// 	email: user.email,
-		// 	name: user.name
-		// }).catch(err => {
-		// 	openToast({
-		// 		msg: err,
-		// 		type: 'error'
-		// 	})
-		// })
+		UseFetch('http://localhost:3333/user/create', 'POST', {
+			email: user.email,
+			name: user.name
+		}).catch(err => {
+			openToast({
+				msg: err.message,
+				type: 'error'
+			})
+		})
 	}
 
 	function loginAccount(email: string, password: string) {
@@ -62,15 +63,19 @@ export function AuthProvider(props: any) {
 				})
 				Router.push('/')
 			})
-			.catch(err => console.log(err.message))
+			.catch(err => {
+				openToast({
+					msg: err.message,
+					type: 'error'
+				})
+			})
 	}
 
 	function createUserInFirebase(email: string, password: string) {
 		createUserWithEmailAndPassword(auth, email, password)
-			.catch((error) => {
-				console.log('error.message')
+			.catch((err) => {
 				openToast({
-					msg: error.message,
+					msg: err.message,
 					type: 'error'
 				})
 			})
@@ -78,7 +83,12 @@ export function AuthProvider(props: any) {
 
 	function loginUserInFirebase(email: string, password: string) {
 		signInWithEmailAndPassword(auth, email, password)
-			.catch((error) => console.log(error.message))
+			.catch((err) => {
+				openToast({
+					msg: err.message,
+					type: 'error'
+				})
+			})
 	}
 
 	function getUserInFirebase() {

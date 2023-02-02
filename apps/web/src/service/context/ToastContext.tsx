@@ -25,13 +25,15 @@ export function ToastProvider(props: any) {
 	const [type, setType] = useState<'success' | 'error' | 'info' | 'warning'>('success')
 
 	function openToast(data: ToastAlert) {
-		console.log('Passei aqui')
 		setOpen(true)
 		setMsg(data.msg)
 		setType(data.type)
-	}
 
-	console.log(open)
+		setTimeout(() => {
+			setOpen(false)
+			setMsg('')
+		}, 3000)
+	}
 
 	return (
 		<ToastContext.Provider value={{

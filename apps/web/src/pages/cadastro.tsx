@@ -38,7 +38,6 @@ export default function Cadastro() {
 					<p className="text-base md:text-xl font-normal">ou</p>
 					<Link href='/login' className="text-green-500 hover:underline text-base md:text-xl">Entrar</Link>
 				</div>
-				<Toast />
 				<div className="mt-8 md:mt-0 md:h-1/3 w-full flex items-center">
 					<form className="h-full w-full flex items-center justify-center flex-col">
 						<InputField

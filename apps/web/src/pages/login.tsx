@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { useState } from "react"
+
 import { BackgroundField } from "../components/BackgroundField"
 import { ButtonField } from "../components/ButtonField"
 import { InputField } from "../components/InputField"
@@ -10,6 +11,7 @@ import { SocialMediaOption } from "../components/SocialMediaOption"
 import Google from '../../public/google.svg'
 import Facebook from '../../public/facebook.svg'
 import Apple from '../../public/apple.svg'
+import { Toast } from "../components/Toast"
 
 export default function Login() {
 	const [email, setEmail] = useState('')
@@ -27,13 +29,11 @@ export default function Login() {
 				<Welcome />
 			</div>
 			<div className="h-full w-full md:w-1/2">
-
 				<div className="h-14 md:h-1/4 w-full flex items-end justify-center text-xl md:text-4xl font-semibold gap-2">
 					<h1>ENTRAR</h1>
 					<p className="text-base md:text-xl font-normal">ou</p>
 					<Link href='/cadastro' className="text-green-500 hover:underline text-base md:text-xl">Cadastrar-se</Link>
 				</div>
-
 				<div className="mt-8 md:mt-0 md:h-1/3 w-full flex items-center">
 					<form className="h-full w-full flex items-center justify-center flex-col">
 						<InputField
@@ -53,7 +53,7 @@ export default function Login() {
 
 						<div className="flex flex-row w-full justify-between items-center ">
 							<div className="h-10 w-[50%] flex items-center justify-center">
-								<input type="checkbox" className="text-3xl outline-none"/>
+								<input type="checkbox" className="text-3xl outline-none" />
 								<p className="text-sm md:text-base mx-3 text-gray-500">Lembrar-me</p>
 							</div>
 
