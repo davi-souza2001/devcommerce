@@ -107,7 +107,7 @@ export default function Account() {
 							</p>
 						</div>
 						<div className='h-full w-96 flex items-center justify-center'>
-							<ButtonField text='Logout' color='red' onClick={logoutInFirebase} className='p-5' />
+							<ButtonField text='Logout' color='yellow' onClick={logoutInFirebase} className='p-5' />
 						</div>
 					</div>
 					<div className='h-2/3 w-full flex items-center justify-center'>
@@ -121,7 +121,7 @@ export default function Account() {
 							>
 								<InputField type='string' placeHolder='name' onChange={(e) => setName(e.target.value)} value={name} className='mb-5 w-96' />
 								<InputField type='string' placeHolder='email' readonly onChange={(e) => setEmail(e.target.value)} value={email} className='mb-5 w-96 bg-slate-200' />
-								<ButtonField type='submit' text='Submit' color='green' className='w-full' />
+								<ButtonField type='submit' text='Submit' className='w-full' />
 							</form>
 						</div>
 					</div>

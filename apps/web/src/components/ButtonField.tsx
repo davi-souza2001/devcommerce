@@ -1,6 +1,6 @@
 interface ButtonField {
 	text: string
-	color?: string
+	color?: "red" | "blue" | "yellow"
 	className?: string
 	type?: "button" | "submit" | "reset"
 	onClick?: () => void
