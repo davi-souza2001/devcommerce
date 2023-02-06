@@ -66,7 +66,7 @@ export default function Login() {
 				</div>
 
 				<div className="mt-2 w-full flex items-center justify-start flex-col">
-					<ButtonField text="Entrar" className="w-1/2 md:w-96" onClick={handleLogin} />
+					<ButtonField text="Entrar" className="w-1/2 md:w-96 bg-green-500 hover:bg-green-600" onClick={handleLogin} />
 				</div>
 
 				<div className="mt-6 flex items-center justify-center gap-6">

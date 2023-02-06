@@ -10,7 +10,6 @@ import { SocialMediaOption } from "../components/SocialMediaOption"
 import Google from '../../public/google.svg'
 import Facebook from '../../public/facebook.svg'
 import Apple from '../../public/apple.svg'
-import { Toast } from "../components/Toast"
 
 export default function Cadastro() {
 	const [name, setName] = useState('')
@@ -65,7 +64,7 @@ export default function Cadastro() {
 				</div>
 
 				<div className="my-4 w-full flex items-center justify-start flex-col">
-					<ButtonField text="Criar" className="w-1/2 md:w-96" onClick={handleCreate} />
+					<ButtonField text="Criar" className="w-1/2 md:w-96 bg-green-500 hover:bg-green-600" onClick={handleCreate} />
 				</div>
 
 				<div className="mt-6 flex items-center justify-center gap-6">
