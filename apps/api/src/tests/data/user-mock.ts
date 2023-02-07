@@ -17,4 +17,15 @@ export class UsersMock implements Users {
 
 		return user
 	}
+
+	async editUser({ name, email }: UserCreateData) {
+		const user = this.users.find(user => user.email === email && user.name === name)
+		if (user) {
+			user.email = email
+			user.name = name
+		} else {
+			const user = { name, email }
+			this.users.push(user)
+		}
+	}
 }

@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "test": "vitest",
-    "cov": "vitest run --coverage",
+    "test:c": "vitest run --coverage",
     "dev": "tsx watch src/server.ts",
     "build": "npx tsc"
   },

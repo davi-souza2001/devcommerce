@@ -71,6 +71,7 @@ npx turbo link
 - [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
 
 <!-- 
+TODO: Fazer front e produtos, carrinhos...
 TODO: Criar entidade de produto
 TODO: Criar entidade de produtoComprado
 TODO: Adicionar rotas de item e carrinho para front
