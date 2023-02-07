@@ -48,5 +48,9 @@ export class AvatarsMock implements Avatars {
 		}
 	}
 
+	async get(id: string){
+		const avatar = this.avatars.find(avatar => avatar.idUser === id)
 
+		return avatar ?? null
+	}
 }
