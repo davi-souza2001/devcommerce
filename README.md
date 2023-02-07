@@ -72,6 +72,7 @@ npx turbo link
 
 <!-- 
 TODO: Fazer front e produtos, carrinhos...
+TODO: Fazer com que os produtos adicionados aos favoritos aparecam assim no search
 TODO: Criar entidade de produto
 TODO: Criar entidade de produtoComprado
 TODO: Adicionar rotas de item e carrinho para front
