@@ -71,8 +71,6 @@ npx turbo link
 - [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
 
 <!-- 
-TODO: Corrigir cor do botão do front
-TODO: Fazer context para avatar
 TODO: Fazer regras para requisições para mandar email, senha, nome
 TODO: Ver animações no front
 TODO: Adicionar cypress
@@ -80,5 +78,6 @@ TODO: Criar entidade de produto
 TODO: Criar entidade de produtoComprado
 TODO: Adicionar rotas de item e carrinho para front
 TODO: Acabar testes no backend
+TODO: Fazer context para avatar
 TODO: Adicionar responsividade
  -->

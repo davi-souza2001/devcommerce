@@ -21,6 +21,14 @@ export class SubmitUserService {
 			throw new Error('Email is required!')
 		}
 
+		if(name.length < 3){
+			throw new Error('Is required the name have more than 3 characters!')
+		}
+
+		if(!email.includes('@')){
+			throw new Error('Put a valid email!')
+		}
+
 		await this.usersRepository.create({ email, name })
 	}
 
