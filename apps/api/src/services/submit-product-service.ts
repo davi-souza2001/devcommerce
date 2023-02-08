@@ -35,22 +35,8 @@ export class SubmitProductService {
 		await this.productsRepository.create({ name, category, price, image })
 	}
 
-	async executeGetByName(name: string) {
-		if (!name) {
-			throw new Error('Name is required!')
-		}
-
-		const product = await this.productsRepository.getByName(name)
-
-		return product
-	}
-
-	async executeGetByCategory(category: string) {
-		if (!category) {
-			throw new Error('Name is required!')
-		}
-
-		const product = await this.productsRepository.getByCategory(category)
+	async executeGet(){
+		const product = await this.productsRepository.get()
 
 		return product
 	}

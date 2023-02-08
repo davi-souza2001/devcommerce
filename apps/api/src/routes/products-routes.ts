@@ -28,25 +28,9 @@ routesProducts.post('/product/create', async (req, res) => {
 	}
 })
 
-routesProducts.post('/product/getByName', async (req, res) => {
-	let name = req.body.name
-
+routesProducts.get('/product/get', async (req, res) => {
 	try {
-		const product = await submitProductsService.executeGetByName(name)
-
-		return res.status(201).json(product)
-
-	} catch (error: any) {
-
-		return res.status(401).json({ message: error.message })
-	}
-})
-
-routesProducts.post('/product/getByCategory', async (req, res) => {
-	let category = req.body.category
-
-	try {
-		const product = await submitProductsService.executeGetByCategory(category)
+		const product = await submitProductsService.executeGet()
 
 		return res.status(201).json(product)
 

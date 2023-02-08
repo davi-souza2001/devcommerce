@@ -7,6 +7,5 @@ export interface ProductCreateData {
 
 export interface Products {
 	create: (data: ProductCreateData) => Promise<void>
-	getByName: (name: string) => Promise<ProductCreateData | null>
-	getByCategory: (category: string) => Promise<ProductCreateData[] | null>
+	get: () => Promise<ProductCreateData[] | null>
 }

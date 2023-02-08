@@ -14,23 +14,9 @@ export class PrismaProducts implements Products {
 		})
 	}
 
-	async getByName(name: string): Promise<ProductCreateData | null> {
-		const product = await prisma.product.findFirst({
-			where: {
-				name
-			}
-		}) as ProductCreateData | null
-
-		return product
-	}
-
-	async getByCategory(category: string): Promise<ProductCreateData[] | null> {
+	async get(): Promise<ProductCreateData[] | null>{
 		// @ts-ignore
-		const product = await prisma.product.findMany({
-			where: {
-				category
-			}
-		}) as ProductCreateData[] | null
+		const product: ProductCreateData[] | null = await prisma.product.findMany()
 
 		return product
 	}
