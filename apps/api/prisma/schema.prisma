@@ -15,9 +15,18 @@ model User {
   Avatar Avatar[]
 }
 
+model Product {
+  id String @id @default(uuid())
+
+  name      String
+  categorie String
+  price     Decimal
+  image     String
+}
+
 model Avatar {
-  id            String  @id @default(uuid())
-  
+  id String @id @default(uuid())
+
   idUser        String
   accessory     String
   body          String
