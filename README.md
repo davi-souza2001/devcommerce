@@ -73,12 +73,12 @@ npx turbo link
 <!-- 
 TODO: Fazer front e produtos, carrinhos...
 TODO: Fazer com que os produtos adicionados aos favoritos aparecam assim no search
-TODO: Criar entidade de produto
 TODO: Criar entidade de produtoComprado
 TODO: Adicionar rotas de item e carrinho para front
 TODO: Acabar testes no backend
 TODO: Fazer context para avatar
 TODO: Passar tudo para inglês
+TODO: Fazer projeto admin para adicionar e remover produtos
 TODO: Fazer modo claro e escuro
 TODO: Adicionar responsividade
  -->
