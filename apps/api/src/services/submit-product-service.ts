@@ -2,7 +2,7 @@ import { Products } from '../repositories/product'
 
 interface SubmitProductServiceRequest {
 	name: string
-	categorie: string
+	category: string
 	price: number
 	image?: string
 }
@@ -13,14 +13,14 @@ export class SubmitProductService {
 	) { }
 
 	async executeCreate(request: SubmitProductServiceRequest) {
-		const { name, categorie, price } = request
+		const { name, category, price } = request
 		let image = request.image
 
 		if (!name) {
 			throw new Error('Name is required!')
 		}
 
-		if (!categorie) {
+		if (!category) {
 			throw new Error('Categorie is required!')
 		}
 
@@ -32,6 +32,26 @@ export class SubmitProductService {
 			image = ''
 		}
 
-		await this.productsRepository.create({ name, categorie, price, image })
+		await this.productsRepository.create({ name, category, price, image })
+	}
+
+	async executeGetByName(name: string) {
+		if (!name) {
+			throw new Error('Name is required!')
+		}
+
+		const product = await this.productsRepository.getByName(name)
+
+		return product
+	}
+
+	async executeGetByCategory(category: string) {
+		if (!category) {
+			throw new Error('Name is required!')
+		}
+
+		const product = await this.productsRepository.getByCategory(category)
+
+		return product
 	}
 }

@@ -18,10 +18,10 @@ model User {
 model Product {
   id String @id @default(uuid())
 
-  name      String
-  categorie String
-  price     Decimal
-  image     String
+  name     String
+  category String
+  price    Decimal
+  image    String
 }
 
 model Avatar {

@@ -6,6 +6,15 @@ CREATE TABLE "User" (
 );
 
 -- CreateTable
+CREATE TABLE "Product" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "name" TEXT NOT NULL,
+    "category" TEXT NOT NULL,
+    "price" DECIMAL NOT NULL,
+    "image" TEXT NOT NULL
+);
+
+-- CreateTable
 CREATE TABLE "Avatar" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "idUser" TEXT NOT NULL,
