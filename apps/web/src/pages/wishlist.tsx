@@ -12,16 +12,20 @@ export default function Wishlist() {
 			<TopBar />
 			<NamePageField name="Wishlist"/>
 			<div className="w-full p-5 grid grid-cols-4">
-				{wishlist?.map(wishlist => {
+				{wishlist.length !== 0 ? wishlist?.map((wishlist, i) => {
 					return (
 						<CardField
-							key={wishlist.id}
+							key={i}
 							name={wishlist.name}
 							price={wishlist.price}
 							image={wishlist.image}
+							category={wishlist.category}
+							belongsWishlist={true}
 						/>
 					)
-				})}
+				}) : (
+					<p>Looks like you haven't favorited a product yet :/</p>
+				)}
 			</div>
 		</BackgroundField>
 	)

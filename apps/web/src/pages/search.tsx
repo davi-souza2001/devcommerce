@@ -8,11 +8,10 @@ import UseProduct from "../service/hook/useProduct"
 export default function Search() {
 	const { product } = UseProduct()
 
-	console.log(product)
 	return (
 		<BackgroundField>
 			<TopBar />
-			<NamePageField name="Search"/>
+			<NamePageField name="Search" />
 			<div className="h-16 w-full  flex items-center justify-center">
 				<div className="h-2/3 w-1/2 flex items-center justify-around bg-slate-100 rounded-md">
 					<HiSearch className="h-1/2 w-16" />
@@ -27,6 +26,8 @@ export default function Search() {
 							name={product.name}
 							price={product.price}
 							image={product.image}
+							category={product.category}
+							belongsWishlist={false}
 						/>
 					)
 				})}
