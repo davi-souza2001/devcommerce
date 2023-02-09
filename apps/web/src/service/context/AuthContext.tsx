@@ -37,7 +37,7 @@ export function AuthProvider(props: any) {
 		email: '',
 		password: ''
 	})
-	const { openToast, open } = UseToast()
+	const { openToast } = UseToast()
 
 	function createAccount(user: User) {
 		createUserInFirebase(user.email, user.password ?? '')

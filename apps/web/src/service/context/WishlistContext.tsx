@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react"
 import UseAuth from "../hook/useAuth"
 import UseFetch from "../hook/useFetch"
+import UseToast from "../hook/useToast"
 
 interface Wishlist {
 	id?: string
@@ -26,16 +27,7 @@ const WishlistContext = createContext<WishlistContextProps>({
 export function WishlistProvider(props: any) {
 	const [wishlist, setWishlist] = useState<Wishlist[]>([])
 	const { user } = UseAuth()
-
-	function handleAddToWishlist(data: Wishlist) {
-		UseFetch('http://localhost:3333/wishlist/create', 'POST', {
-			idUser: data.idUser,
-			name: data.name,
-			category: data.category,
-			price: data.price,
-			image: data.image
-		}).then(() => getWishlist())
-	}
+	const { openToast } = UseToast()
 
 	function getWishlist(){
 		UseFetch('http://localhost:3333/wishlist/get', "POST", {
@@ -44,11 +36,33 @@ export function WishlistProvider(props: any) {
 			.then((wishlists) => setWishlist(wishlists))
 	}
 
+	function handleAddToWishlist(data: Wishlist) {
+		UseFetch('http://localhost:3333/wishlist/create', 'POST', {
+			idUser: data.idUser,
+			name: data.name,
+			category: data.category,
+			price: data.price,
+			image: data.image
+		}).then(() => {
+			openToast({
+				msg: 'Added to your list!',
+				type: 'success'
+			})
+			getWishlist()
+		})
+	}
+
 	function handleDeleteWishlist(id: string){
 		console.log('Function'+id)
 		UseFetch('http://localhost:3333/wishlist/delete', "POST", {
 			id
-		}).then(() => getWishlist())
+		}).then(() => {
+			openToast({
+				msg: 'Deleted from your list! :/',
+				type: 'success'
+			})
+			getWishlist()
+		})
 	}
 
 	useEffect(() => {
