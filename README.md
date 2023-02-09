@@ -71,12 +71,12 @@ npx turbo link
 - [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
 
 <!-- 
-TODO: Fazer front e produtos, carrinhos...
+TODO: Fazer função de adicionar a wishlist no front
+TODO: Fazer entidade de carrinho
+TODO: Fazer função de adicionar a carrinho no front
 TODO: Fazer com que os produtos adicionados aos favoritos aparecam assim no search
-TODO: Criar entidade de produtoComprado
-TODO: Adicionar rotas de item e carrinho para front
 TODO: Acabar testes no backend
-TODO: Fazer context para avatar
+TODO: Testar se rotas podem ser trocadas para get
 TODO: Passar tudo para inglês
 TODO: Fazer projeto admin para adicionar e remover produtos
 TODO: Fazer modo claro e escuro

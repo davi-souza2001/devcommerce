@@ -18,7 +18,7 @@ const ProductContext = createContext<ProductContextProps>({
 })
 
 export function ProductProvider(props: any) {
-	const [product, setProduct] = useState([])
+	const [product, setProduct] = useState<Product[]>([])
 
 	useEffect(() => {
 		UseFetch('http://localhost:3333/product/get', "GET")
