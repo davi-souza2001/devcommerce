@@ -10,12 +10,13 @@ export default function Wishlist() {
 	return (
 		<BackgroundField>
 			<TopBar />
-			<NamePageField name="Wishlist"/>
+			<NamePageField name="Wishlist" />
 			<div className="w-full p-5 grid grid-cols-4">
 				{wishlist.length !== 0 ? wishlist?.map((wishlist, i) => {
 					return (
 						<CardField
 							key={i}
+							id={wishlist.id ?? ''}
 							name={wishlist.name}
 							price={wishlist.price}
 							image={wishlist.image}

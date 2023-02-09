@@ -6,6 +6,7 @@ import UseAuth from '../service/hook/useAuth'
 import UseWishlist from '../service/hook/useWishlist'
 
 interface CardFieldProps {
+	id: string
 	name: string
 	price: number
 	category: string
@@ -14,10 +15,11 @@ interface CardFieldProps {
 }
 
 export function CardField(props: CardFieldProps) {
-	const { handleAddToWishlist } = UseWishlist()
+	const { handleAddToWishlist, handleDeleteWishlist } = UseWishlist()
 	const { user } = UseAuth()
 
 	const product = {
+		id: props.id,
 		idUser: user.id ?? '',
 		name: props.name,
 		category: props.category,
@@ -41,7 +43,7 @@ export function CardField(props: CardFieldProps) {
 						{props.belongsWishlist ? (
 							<HiTrash
 								className='mr-4 text-2xl cursor-pointer hover:text-red-700'
-								onClick={() => handleAddToWishlist(product)}
+								onClick={() => handleDeleteWishlist(product.id)}
 							/>
 						) : (
 							<HiHeart

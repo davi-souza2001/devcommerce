@@ -14,11 +14,13 @@ interface Wishlist {
 interface WishlistContextProps {
 	wishlist: Wishlist[]
 	handleAddToWishlist: (data: Wishlist) => void
+	handleDeleteWishlist: (id: string) => void
 }
 
 const WishlistContext = createContext<WishlistContextProps>({
 	wishlist: [],
-	handleAddToWishlist: async () => { }
+	handleAddToWishlist: async () => { },
+	handleDeleteWishlist: () => {}
 })
 
 export function WishlistProvider(props: any) {
@@ -42,6 +44,13 @@ export function WishlistProvider(props: any) {
 			.then((wishlists) => setWishlist(wishlists))
 	}
 
+	function handleDeleteWishlist(id: string){
+		console.log('Function'+id)
+		UseFetch('http://localhost:3333/wishlist/delete', "POST", {
+			id
+		}).then(() => getWishlist())
+	}
+
 	useEffect(() => {
 		getWishlist()
 	}, [user])
@@ -49,7 +58,8 @@ export function WishlistProvider(props: any) {
 	return (
 		<WishlistContext.Provider value={{
 			wishlist,
-			handleAddToWishlist
+			handleAddToWishlist,
+			handleDeleteWishlist
 		}}>
 			{props.children}
 		</WishlistContext.Provider>
