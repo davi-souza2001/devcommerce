@@ -42,3 +42,17 @@ routesWishlist.post('/wishlist/get', async (req, res) => {
 		return res.status(401).json({ message: error.message })
 	}
 })
+
+routesWishlist.post('/wishlist/delete', async (req, res) => {
+	const { id } = req.body
+
+	try {
+		await submitWishlistService.executeDelete(id)
+
+		return res.status(201).json({ message: 'Item deleted!' })
+
+	} catch (error: any) {
+
+		return res.status(401).json({ message: error.message })
+	}
+})

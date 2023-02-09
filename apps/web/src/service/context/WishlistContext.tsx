@@ -3,6 +3,7 @@ import UseAuth from "../hook/useAuth"
 import UseFetch from "../hook/useFetch"
 
 interface Wishlist {
+	id?: string
 	name: string
 	idUser: string
 	category: string

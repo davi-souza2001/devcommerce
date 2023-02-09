@@ -24,4 +24,12 @@ export class PrismaWishlist implements Wishlist {
 
 		return wishlist
 	}
+
+	async delete(id: string): Promise<void>{
+		await prisma.wishlist.delete({
+			where: {
+				id
+			}
+		})
+	}
 }

@@ -45,4 +45,8 @@ export class SubmitWishlistService {
 
 		return wishlist
 	}
+
+	async executeDelete(id: string){
+		await this.wishlistRepository.delete(id)
+	}
 }

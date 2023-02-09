@@ -9,4 +9,5 @@ export interface WishlistCreateData {
 export interface Wishlist {
 	create: (data: WishlistCreateData) => Promise<void>
 	get: (idUser: string) => Promise<WishlistCreateData[] | null>
+	delete: (id: string) => Promise<void>
 }
