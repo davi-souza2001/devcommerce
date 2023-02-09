@@ -10,9 +10,10 @@ datasource db {
 model User {
   id String @id @default(uuid())
 
-  name   String
-  email  String   @unique
-  Avatar Avatar[]
+  name     String
+  email    String     @unique
+  Avatar   Avatar[]
+  Wishlist Wishlist[]
 }
 
 model Product {
@@ -22,6 +23,18 @@ model Product {
   category String
   price    Decimal
   image    String
+}
+
+model Wishlist {
+  id String @id @default(uuid())
+
+  idUser   String
+  name     String
+  category String
+  price    Decimal
+  image    String
+
+  user User @relation(fields: [idUser], references: [id])
 }
 
 model Avatar {
