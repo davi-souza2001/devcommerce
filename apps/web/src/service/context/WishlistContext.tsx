@@ -20,8 +20,8 @@ interface WishlistContextProps {
 
 const WishlistContext = createContext<WishlistContextProps>({
 	wishlist: [],
-	handleAddToWishlist: async () => { },
-	handleDeleteWishlist: () => {}
+	handleDeleteWishlist: () => { },
+	handleAddToWishlist: async () => { }
 })
 
 export function WishlistProvider(props: any) {
@@ -29,7 +29,7 @@ export function WishlistProvider(props: any) {
 	const { user } = UseAuth()
 	const { openToast } = UseToast()
 
-	function getWishlist(){
+	function getWishlist() {
 		UseFetch('http://localhost:3333/wishlist/get', "POST", {
 			idUser: user.id
 		})
@@ -52,8 +52,7 @@ export function WishlistProvider(props: any) {
 		})
 	}
 
-	function handleDeleteWishlist(id: string){
-		console.log('Function'+id)
+	function handleDeleteWishlist(id: string) {
 		UseFetch('http://localhost:3333/wishlist/delete', "POST", {
 			id
 		}).then(() => {

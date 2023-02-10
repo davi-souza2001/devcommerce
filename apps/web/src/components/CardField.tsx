@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 import { HiHeart, HiShoppingCart, HiTrash } from 'react-icons/hi'
 
 import Photo from '../../public/Teste.png'
@@ -15,7 +16,7 @@ interface CardFieldProps {
 }
 
 export function CardField(props: CardFieldProps) {
-	const { handleAddToWishlist, handleDeleteWishlist } = UseWishlist()
+	const { handleAddToWishlist, handleDeleteWishlist, wishlist } = UseWishlist()
 	const { user } = UseAuth()
 
 	const product = {
@@ -47,7 +48,7 @@ export function CardField(props: CardFieldProps) {
 							/>
 						) : (
 							<HiHeart
-								className='mr-4 text-2xl cursor-pointer hover:text-red-700'
+								className={`mr-4 text-2xl cursor-pointer hover:text-red-700`}
 								onClick={() => handleAddToWishlist(product)}
 							/>
 						)}
