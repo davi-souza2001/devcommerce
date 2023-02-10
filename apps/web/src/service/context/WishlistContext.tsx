@@ -36,16 +36,7 @@ export function WishlistProvider(props: any) {
 	}
 
 	function handleAddToWishlist(data: Wishlist) {
-		const list: Wishlist[] = []
-		let alredyExists = false
-		wishlist.map(wishlist => wishlist.idUser === user.id && list.push(wishlist))
-		list.map((item) => {
-			if (item.name === data.name) {
-				alredyExists = true
-			}
-		})
-
-		if (alredyExists) {
+		if (itemAlreadyExists(data)) {
 			openToast({
 				msg: 'Item already have in your wishlist!',
 				type: 'info'
@@ -77,6 +68,19 @@ export function WishlistProvider(props: any) {
 			})
 			getWishlist()
 		})
+	}
+
+	function itemAlreadyExists(data: Wishlist){
+		const list: Wishlist[] = []
+		let alredyExists = false
+		wishlist.map(wishlist => wishlist.idUser === user.id && list.push(wishlist))
+		list.map((item) => {
+			if (item.name === data.name) {
+				alredyExists = true
+			}
+		})
+
+		return alredyExists
 	}
 
 	useEffect(() => {
