@@ -71,7 +71,7 @@ npx turbo link
 - [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
 
 <!-- 
-TODO: Fazer função de adicionar a wishlist no front
+TODO: Fazer função de pegar produto por categorias
 TODO: Fazer entidade de carrinho
 TODO: Fazer função de adicionar a carrinho no front
 TODO: Fazer com que os produtos adicionados aos favoritos aparecam assim no search
