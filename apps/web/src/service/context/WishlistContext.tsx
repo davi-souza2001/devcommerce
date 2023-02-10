@@ -32,8 +32,7 @@ export function WishlistProvider(props: any) {
 	function getWishlist() {
 		UseFetch('http://localhost:3333/wishlist/get', "POST", {
 			idUser: user.id
-		})
-			.then((wishlists) => setWishlist(wishlists))
+		}).then((wishlists) => setWishlist(wishlists))
 	}
 
 	function handleAddToWishlist(data: Wishlist) {
