@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { HiHeart, HiShoppingCart, HiTrash } from 'react-icons/hi'
 
 import Photo from '../../public/Teste.png'
+import { Wishlist } from '../service/context/WishlistContext'
 import UseAuth from '../service/hook/useAuth'
 import UseWishlist from '../service/hook/useWishlist'
 
@@ -16,10 +17,10 @@ interface CardFieldProps {
 }
 
 export function CardField(props: CardFieldProps) {
-	const { handleAddToWishlist, handleDeleteWishlist, wishlist } = UseWishlist()
+	const { handleAddToWishlist, handleDeleteWishlist, itemAlreadyExists } = UseWishlist()
 	const { user } = UseAuth()
 
-	const product = {
+	const product: Wishlist = {
 		id: props.id,
 		idUser: user.id ?? '',
 		name: props.name,
@@ -44,11 +45,11 @@ export function CardField(props: CardFieldProps) {
 						{props.belongsWishlist ? (
 							<HiTrash
 								className='mr-4 text-2xl cursor-pointer hover:text-red-700'
-								onClick={() => handleDeleteWishlist(product.id)}
+								onClick={() => handleDeleteWishlist(product.id ?? '')}
 							/>
 						) : (
 							<HiHeart
-								className={`mr-4 text-2xl cursor-pointer hover:text-red-700`}
+								className={`mr-4 text-2xl cursor-pointer ${itemAlreadyExists(product) && 'text-red-700'} hover:text-red-700`}
 								onClick={() => handleAddToWishlist(product)}
 							/>
 						)}

@@ -3,7 +3,7 @@ import UseAuth from "../hook/useAuth"
 import UseFetch from "../hook/useFetch"
 import UseToast from "../hook/useToast"
 
-interface Wishlist {
+export interface Wishlist {
 	id?: string
 	name: string
 	idUser: string
@@ -14,12 +14,14 @@ interface Wishlist {
 
 interface WishlistContextProps {
 	wishlist: Wishlist[]
+	itemAlreadyExists: (data: Wishlist) => boolean
 	handleAddToWishlist: (data: Wishlist) => void
 	handleDeleteWishlist: (id: string) => void
 }
 
 const WishlistContext = createContext<WishlistContextProps>({
 	wishlist: [],
+	itemAlreadyExists: () => false,
 	handleDeleteWishlist: () => { },
 	handleAddToWishlist: async () => { }
 })
@@ -70,7 +72,7 @@ export function WishlistProvider(props: any) {
 		})
 	}
 
-	function itemAlreadyExists(data: Wishlist){
+	function itemAlreadyExists(data: Wishlist) {
 		const list: Wishlist[] = []
 		let alredyExists = false
 		wishlist.map(wishlist => wishlist.idUser === user.id && list.push(wishlist))
@@ -90,6 +92,7 @@ export function WishlistProvider(props: any) {
 	return (
 		<WishlistContext.Provider value={{
 			wishlist,
+			itemAlreadyExists,
 			handleAddToWishlist,
 			handleDeleteWishlist
 		}}>
