@@ -37,19 +37,35 @@ export function WishlistProvider(props: any) {
 	}
 
 	function handleAddToWishlist(data: Wishlist) {
-		UseFetch('http://localhost:3333/wishlist/create', 'POST', {
-			idUser: data.idUser,
-			name: data.name,
-			category: data.category,
-			price: data.price,
-			image: data.image
-		}).then(() => {
-			openToast({
-				msg: 'Added to your list!',
-				type: 'success'
-			})
-			getWishlist()
+		const list: Wishlist[] = []
+		let alredyExists = false
+		wishlist.map(wishlist => wishlist.idUser === user.id && list.push(wishlist))
+		list.map((item) => {
+			if (item.name === data.name) {
+				alredyExists = true
+			}
 		})
+
+		if (alredyExists) {
+			openToast({
+				msg: 'Item already have in your wishlist!',
+				type: 'info'
+			})
+		} else {
+			UseFetch('http://localhost:3333/wishlist/create', 'POST', {
+				idUser: data.idUser,
+				name: data.name,
+				category: data.category,
+				price: data.price,
+				image: data.image
+			}).then(() => {
+				openToast({
+					msg: 'Added to your list!',
+					type: 'success'
+				})
+				getWishlist()
+			})
+		}
 	}
 
 	function handleDeleteWishlist(id: string) {
