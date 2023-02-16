@@ -7,6 +7,7 @@ export interface Cart {
 	idUser: string
 	name: string
 	price: number
+	image: string
 }
 
 interface CartContextProps {
