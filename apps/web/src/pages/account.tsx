@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { AvatarProps, BigHead } from '@bigheads/core'
 import { HiPencil } from "react-icons/hi"
 
-import { TopBar } from "../components/TopBar"
+import { TopBar } from "../components/TopBarField"
 import { InputField } from '../components/InputField'
 import { ButtonField } from '../components/ButtonField'
 import { BackgroundField } from '../components/BackgroundField'
@@ -96,7 +96,27 @@ export default function Account() {
 										skinTone={avatar.skinTone ?? 'light'}
 									/>
 								) : (
-									<p>Criar</p>
+									<BigHead
+										accessory={'none'}
+										body={'chest'}
+										circleColor='blue'
+										clothing={'naked'}
+										clothingColor={'black'}
+										eyebrows={'serious'}
+										eyes={'normal'}
+										faceMask={false}
+										faceMaskColor="white"
+										facialHair={'none'}
+										graphic={'none'}
+										hair={'none'}
+										hairColor={'black'}
+										hat={'none'}
+										hatColor={'black'}
+										lashes={false}
+										lipColor={'turqoise'}
+										mouth={'serious'}
+										skinTone={'light'}
+									/>
 								)}
 							</div>
 							<p className='ml-5 text-lg font-semibold'>Davi Souza</p>

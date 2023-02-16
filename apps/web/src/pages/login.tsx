@@ -5,13 +5,13 @@ import { BackgroundField } from "../components/BackgroundField"
 import { ButtonField } from "../components/ButtonField"
 import { InputField } from "../components/InputField"
 import UseAuth from "../service/hook/useAuth"
-import { Welcome } from "../components/Welcome"
-import { SocialMediaOption } from "../components/SocialMediaOption"
+import { Welcome } from "../components/WelcomeField"
+import { SocialMediaOption } from "../components/SocialMediaOptionField"
 
 import Google from '../../public/google.svg'
 import Facebook from '../../public/facebook.svg'
 import Apple from '../../public/apple.svg'
-import { Toast } from "../components/Toast"
+import { Toast } from "../components/ToastField"
 
 export default function Login() {
 	const [email, setEmail] = useState('')

@@ -4,7 +4,7 @@ import { HiSearch } from "react-icons/hi"
 import { BackgroundField } from "../components/BackgroundField"
 import { CardField } from "../components/CardField"
 import { NamePageField } from "../components/NamePageField"
-import { TopBar } from "../components/TopBar"
+import { TopBar } from "../components/TopBarField"
 import { Product } from "../service/context/ProductContext"
 import UseProduct from "../service/hook/useProduct"
 
@@ -14,12 +14,16 @@ export default function Search() {
 	const [search, setSearch] = useState('')
 
 	useEffect(() => {
-		product.map((product) => {
-			if (product.name === search) {
-				const searchName = productsSearch.find(pro => product.name === pro.name)
-				!searchName && setProductsSearch(state => [...state, product])
-			}
-		})
+		if(search !== ''){
+			product.map((product) => {
+				if (product.name === search) {
+					const searchName = productsSearch.find(pro => product.name === pro.name)
+					!searchName && setProductsSearch(state => [...state, product])
+				}
+			})
+		} else {
+			setProductsSearch([])
+		}
 	}, [search])
 
 	return (

@@ -11,14 +11,19 @@ export interface Product {
 
 interface ProductContextProps {
 	product: Product[]
+	filterBy: string
+	setFilterBy: (filter: string) => void
 }
 
 const ProductContext = createContext<ProductContextProps>({
-	product: []
+	product: [],
+	filterBy: '',
+	setFilterBy: () => {}
 })
 
 export function ProductProvider(props: any) {
 	const [product, setProduct] = useState<Product[]>([])
+	const [filterBy, setFilterBy] = useState('tech')
 
 	useEffect(() => {
 		UseFetch('http://localhost:3333/product/get', "GET")
@@ -27,7 +32,9 @@ export function ProductProvider(props: any) {
 
 	return (
 		<ProductContext.Provider value={{
-			product
+			product,
+			filterBy,
+			setFilterBy
 		}}>
 			{props.children}
 		</ProductContext.Provider>

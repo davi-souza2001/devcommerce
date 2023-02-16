@@ -1,7 +1,7 @@
 import { BackgroundField } from "../components/BackgroundField"
 import { CardField } from "../components/CardField"
 import { NamePageField } from "../components/NamePageField"
-import { TopBar } from "../components/TopBar"
+import { TopBar } from "../components/TopBarField"
 import UseWishlist from "../service/hook/useWishlist"
 
 export default function Wishlist() {
