@@ -5,6 +5,7 @@ import { HiHeart, HiShoppingCart, HiTrash } from 'react-icons/hi'
 import Photo from '../../public/Teste.png'
 import { Wishlist } from '../service/context/WishlistContext'
 import UseAuth from '../service/hook/useAuth'
+import UseCart from '../service/hook/useCart'
 import UseWishlist from '../service/hook/useWishlist'
 
 interface CardFieldProps {
@@ -19,6 +20,7 @@ interface CardFieldProps {
 export function CardField(props: CardFieldProps) {
 	const { handleAddToWishlist, handleDeleteWishlist, itemAlreadyExists } = UseWishlist()
 	const { user } = UseAuth()
+	const { cart } = UseCart()
 
 	const product: Wishlist = {
 		id: props.id,

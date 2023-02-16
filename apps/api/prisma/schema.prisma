@@ -44,6 +44,7 @@ model Cart {
   idUser String
   name   String
   price  Decimal
+  image  String
 
   user User @relation(fields: [idUser], references: [id])
 }

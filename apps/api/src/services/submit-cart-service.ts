@@ -4,6 +4,7 @@ interface SubmitCartServiceRequest {
 	idUser: string
 	name: string
 	price: number
+	image: string
 }
 
 export class SubmitCartService {
@@ -12,7 +13,7 @@ export class SubmitCartService {
 	) { }
 
 	async executeCreate(request: SubmitCartServiceRequest) {
-		const { name, price, idUser } = request
+		const { name, price, idUser, image } = request
 
 		if (!name) {
 			throw new Error('Name is required!')
@@ -26,7 +27,11 @@ export class SubmitCartService {
 			throw new Error('Price is required!')
 		}
 
-		await this.cartRepository.create({ name, idUser, price })
+		if (!image) {
+			throw new Error('Image is required!')
+		}
+
+		await this.cartRepository.create({ name, idUser, price, image })
 	}
 
 	async executeGet(idUser: string) {

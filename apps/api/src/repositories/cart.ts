@@ -2,6 +2,7 @@ export interface CartCreateData {
 	idUser: string
 	name: string
 	price: number
+	image: string
 }
 
 export interface Cart {

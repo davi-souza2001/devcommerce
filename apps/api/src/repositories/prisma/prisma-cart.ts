@@ -2,12 +2,13 @@ import { prisma } from '../../prisma'
 import { Cart, CartCreateData } from '../cart'
 
 export class PrismaCart implements Cart {
-	async create({ name, price, idUser }: CartCreateData): Promise<void> {
+	async create({ name, price, idUser, image }: CartCreateData): Promise<void> {
 		await prisma.cart.create({
 			data: {
 				idUser,
 				name,
-				price
+				price,
+				image
 			}
 		})
 	}

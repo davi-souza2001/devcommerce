@@ -9,13 +9,14 @@ const prismaCart = new PrismaCart()
 const submitCartService = new SubmitCartService(prismaCart)
 
 routesCart.post('/cart/create', async (req, res) => {
-	const { name, price, idUser } = req.body
+	const { name, price, idUser, image } = req.body
 
 	try {
 		await submitCartService.executeCreate({
 			name,
 			idUser,
-			price
+			price,
+			image
 		})
 
 		return res.status(201).json({ message: 'Added to cart!' })
