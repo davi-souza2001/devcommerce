@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react"
 import UseFetch from "../hook/useFetch"
 
-interface Product {
+export interface Product {
 	id: string
 	name: string
 	category: string

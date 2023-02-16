@@ -33,7 +33,7 @@ export default function Categories() {
 					<p>Toy</p>
 				</div>
 				<div
-					className={`h-10 w-16 flex items-center justify-center cursor-pointer font-semibold ${filterBy === 'Computers' && 'border-b-4 border-purple-500'}`}
+					className={`h-10 w-16 flex items-center justify-center cursor-pointer font-semibold ${filterBy === 'computers' && 'border-b-4 border-purple-500'}`}
 					onClick={() => setFilterBy('computers')}
 				>
 					<p>Computers</p>
