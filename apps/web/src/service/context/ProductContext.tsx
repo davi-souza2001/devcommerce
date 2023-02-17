@@ -1,5 +1,7 @@
 import { createContext, useEffect, useState } from "react"
 import UseFetch from "../hook/useFetch"
+import UseToast from "../hook/useToast"
+import { Cart } from "./CartContext"
 
 export interface Product {
 	id: string
@@ -18,7 +20,7 @@ interface ProductContextProps {
 const ProductContext = createContext<ProductContextProps>({
 	product: [],
 	filterBy: '',
-	setFilterBy: () => {}
+	setFilterBy: () => { }
 })
 
 export function ProductProvider(props: any) {
@@ -27,7 +29,7 @@ export function ProductProvider(props: any) {
 
 	useEffect(() => {
 		UseFetch('http://localhost:3333/product/get', "GET")
-		.then((products) => setProduct(products))
+			.then((products) => setProduct(products))
 	}, [])
 
 	return (

@@ -24,7 +24,7 @@ export default function Cart() {
 			<div className="w-full flex items-center justify-center flex-col">
 				{cart?.map((cart: any, index) => {
 					return (
-						<CardToCartField name={cart.name} image={cart.image} price={cart.price} key={index} />
+						<CardToCartField id={cart.id} name={cart.name} image={cart.image} price={cart.price} key={index} />
 					)
 				})}
 			</div>

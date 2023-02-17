@@ -27,10 +27,6 @@ export class SubmitCartService {
 			throw new Error('Price is required!')
 		}
 
-		if (!image) {
-			throw new Error('Image is required!')
-		}
-
 		await this.cartRepository.create({ name, idUser, price, image })
 	}
 

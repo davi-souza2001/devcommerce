@@ -8,7 +8,7 @@ export interface Wishlist {
 	name: string
 	idUser: string
 	category: string
-	price: number
+	price: string
 	image: string
 }
 

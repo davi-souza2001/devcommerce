@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
 import { HiHeart, HiShoppingCart, HiTrash } from 'react-icons/hi'
 
 import Photo from '../../public/Teste.png'
@@ -11,7 +10,7 @@ import UseWishlist from '../service/hook/useWishlist'
 interface CardFieldProps {
 	id: string
 	name: string
-	price: number
+	price: string
 	category: string
 	belongsWishlist: boolean
 	image?: string
@@ -20,7 +19,7 @@ interface CardFieldProps {
 export function CardField(props: CardFieldProps) {
 	const { handleAddToWishlist, handleDeleteWishlist, itemAlreadyExists } = UseWishlist()
 	const { user } = UseAuth()
-	const { cart } = UseCart()
+	const { addToCart } = UseCart()
 
 	const product: Wishlist = {
 		id: props.id,
@@ -55,7 +54,15 @@ export function CardField(props: CardFieldProps) {
 								onClick={() => handleAddToWishlist(product)}
 							/>
 						)}
-						<HiShoppingCart className='mr-4 text-2xl cursor-pointer hover:text-slate-700' />
+						<HiShoppingCart
+							className='mr-4 text-2xl cursor-pointer hover:text-slate-700'
+							onClick={() => addToCart({
+								idUser: user.id ?? '',
+								image: props.image ?? '',
+								name: props.name,
+								price: props.price
+							})}
+						/>
 					</div>
 				</div>
 				<div className='h-1/3 w-full flex items-center justify-start'>
