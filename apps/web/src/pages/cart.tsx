@@ -7,15 +7,13 @@ import UseCart from "../service/hook/useCart"
 
 export default function Cart() {
 	const { cart } = UseCart()
-	const [sumOfPrices, setSumOfPrices] = useState(0)
+	const [sum, setSum] = useState(0)
 
 	useEffect(() => {
-		if (cart.length !== 0) {
-			const prices = cart.map(cart => cart.price)
-			prices.map(value => setSumOfPrices(state => state += parseFloat(value)))
-		}
+		cart.map((cart) => setSum(state => state += parseFloat(cart.price)))
 
 	}, [cart])
+	console.log(sum)
 
 	return (
 		<BackgroundField>
@@ -44,7 +42,7 @@ export default function Cart() {
 					</div>
 					<div className="h-12 w-full flex items-center justify-between">
 						<p className="font-semibold text-2xl">Total</p>
-						<p className="font-medium text-xl">R$ {sumOfPrices}</p>
+						<p className="font-medium text-xl">R$ {sum}</p>
 					</div>
 				</div>
 			</div>
