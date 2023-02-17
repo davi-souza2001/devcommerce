@@ -12,9 +12,7 @@ export default function Cart() {
 	useEffect(() => {
 		if (cart.length !== 0) {
 			const prices = cart.map(cart => cart.price)
-			prices.map(value => {
-				setSumOfPrices(state => value += state)
-			})
+			prices.map(value => setSumOfPrices(state => state += parseFloat(value)))
 		}
 
 	}, [cart])
@@ -24,9 +22,9 @@ export default function Cart() {
 			<TopBar />
 			<NamePageField name="Cart" />
 			<div className="w-full flex items-center justify-center flex-col">
-				{cart?.map((cart: any) => {
+				{cart?.map((cart: any, index) => {
 					return (
-						<CardToCartField name={cart.name} image={cart.image} price={cart.price} />
+						<CardToCartField name={cart.name} image={cart.image} price={cart.price} key={index} />
 					)
 				})}
 			</div>

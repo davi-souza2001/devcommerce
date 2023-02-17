@@ -6,7 +6,7 @@ export interface Cart {
 	id: string
 	idUser: string
 	name: string
-	price: number
+	price: string
 	image: string
 }
 
