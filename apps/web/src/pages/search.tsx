@@ -36,7 +36,7 @@ export default function Search() {
 					<input type="text" className="h-full w-full outline-none bg-slate-100 rounded-md" onChange={(e) => setSearch(e.target.value)} />
 				</div>
 			</div>
-			<div className="w-full p-5 grid grid-cols-4">
+			<div className="w-full p-5 xl:grid xl:grid-cols-4 md:grid md:grid-cols-2 flex items-center justify-center flex-col">
 				{productsSearch.length !== 0 && search !== '' ? productsSearch.map(product => {
 					return (
 						<CardField

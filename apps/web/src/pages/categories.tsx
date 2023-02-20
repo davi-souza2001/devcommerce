@@ -21,7 +21,20 @@ export default function Categories() {
 			<TopBar />
 			<NamePageField name="Categories" />
 			<BarCategoriesField categories={['tech', 'toy', 'material', 'food']}/>
-			<div className="w-full p-5 grid grid-cols-4">
+			<div className="w-full p-5 xl:grid xl:grid-cols-4 md:grid md:grid-cols-2 flex items-center justify-center flex-col">
+				{productsByCategorie.map(product => {
+					return (
+						<CardField
+							key={product.id}
+							id={product.id}
+							name={product.name}
+							price={product.price}
+							image={product.image}
+							category={product.category}
+							belongsWishlist={false}
+						/>
+					)
+				})}
 				{productsByCategorie.map(product => {
 					return (
 						<CardField

@@ -15,7 +15,7 @@ export function CardToCartField(props: CardToCartFieldProps) {
 	const { deleteToCart } = UseCart()
 
 	return (
-		<div className="h-36 w-[900px] flex items-center justify-between bg-slate-300 mb-5 rounded-tl-md rounded-bl-md rounded-tr-md rounded-br-md">
+		<div className="lg:w-[900px] md:w-[750px] sm:w-[550px] h-36 w-full flex items-center justify-between bg-slate-300 mb-5 rounded-tl-md rounded-bl-md rounded-tr-md rounded-br-md">
 			<div className="h-full w-[404px] flex items-center justify-between">
 				<div className="h-full w-1/2 flex items-center justify-center">
 					<Image alt="image product" src={props.image !== '' ? props.image : Test} height={148} className="rounded-tl-md rounded-bl-md" />
