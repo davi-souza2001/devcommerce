@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+
 import { CartProvider } from '../service/context/CartContext'
 import { AuthProvider } from '../service/context/AuthContext'
 import { ToastProvider } from '../service/context/ToastContext'
@@ -7,21 +9,30 @@ import { WishlistProvider } from '../service/context/WishlistContext'
 import '../styles/globals.css'
 
 function App({ Component, pageProps }: any) {
+	const config = {
+		initialColorMode: 'dark',
+		useSystemColorMode: false,
+	}
+
+	const theme = extendTheme({ config })
+
 	return (
-		<ToastProvider>
-			<CartProvider>
-				<AuthProvider>
-					<ProductProvider>
-						<WishlistProvider>
-							<Head>
-								<title>DevCommerce</title>
-							</Head>
-							<Component {...pageProps} />
-						</WishlistProvider>
-					</ProductProvider>
-				</AuthProvider>
-			</CartProvider>
-		</ToastProvider>
+		<ChakraProvider theme={theme}>
+			<ToastProvider>
+				<CartProvider>
+					<AuthProvider>
+						<ProductProvider>
+							<WishlistProvider>
+								<Head>
+									<title>DevCommerce</title>
+								</Head>
+								<Component {...pageProps} />
+							</WishlistProvider>
+						</ProductProvider>
+					</AuthProvider>
+				</CartProvider>
+			</ToastProvider>
+		</ChakraProvider>
 	)
 }
 
