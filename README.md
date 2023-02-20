@@ -29,11 +29,9 @@ MyRocket is a template for ecommerce platforms. Its purpose is to assemble a dat
 
 Testing turborepo for the first time. It helps a lot projects that need more than one repository. In this case, I used it to store my front and backend repository. In the end, I only need to run a single command to run the application and run its tests.
 
-## Tests 
+## Vitest 
 
-Unit tests were done using Jest. Through it, the application is 100% tested!
-
-![Screenshot_6](https://user-images.githubusercontent.com/77704994/178743238-a8e0e785-c887-4439-a0e1-27086e1f7838.png)
+As a vitest, I was able to get the tests off the ground! It's amazing how he manages to run all the tests with native typescript.
 
 
 </html>   
