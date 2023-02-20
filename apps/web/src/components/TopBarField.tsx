@@ -1,7 +1,4 @@
-import Image from 'next/image'
 import Router from 'next/router'
-
-import Logo from '../../public/logo.svg'
 
 export function TopBar() {
 	return (
