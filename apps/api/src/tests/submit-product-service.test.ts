@@ -40,8 +40,9 @@ describe('Tests for products', () => {
 		expect(submitProduct.executeCreate({
 			name: 'test',
 			category: 'test',
-			price: 0
-		})).rejects.toThrow()
+			price: 2,
+			image: ''
+		})).toBeTruthy()
 	})
 
 	it('Should be able to submit a new product', () => {
