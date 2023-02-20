@@ -66,7 +66,7 @@ export function CardField(props: CardFieldProps) {
 					</div>
 				</div>
 				<div className='h-1/3 w-full flex items-center justify-start'>
-					<p className='text-base font-light ml-2'>{props.price}</p>
+					<p className='text-base font-light ml-2'>R$ {props.price}</p>
 				</div>
 			</div>
 		</div>

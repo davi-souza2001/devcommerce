@@ -71,7 +71,7 @@ export default function Account() {
 			<div className='h-5/6 w-full flex items-start justify-around'>
 				<div className='h-5/6 w-10/12 bg-slate-300 rounded-lg mt-10'>
 					<div className='h-1/3 w-full flex items-center justify-between'>
-						<div className='h-full w-96 flex items-center justify-center'>
+						<div className='lg:w-96 sm:w-[700px] h-full w-[1100px] flex items-center justify-center'>
 							<div className='h-60 w-48'>
 								{avatarExists ? (
 									<BigHead
@@ -119,7 +119,7 @@ export default function Account() {
 									/>
 								)}
 							</div>
-							<p className='ml-5 text-lg font-semibold'>Davi Souza</p>
+							<p className='ml-5 text-lg font-semibold'>{user.name}</p>
 							<p className='ml-5 text-xl font-semibold cursor-pointer'
 								onClick={() => Router.push('/avatar')}
 							>
@@ -131,9 +131,6 @@ export default function Account() {
 						</div>
 					</div>
 					<div className='h-2/3 w-full flex items-center justify-center'>
-						<div className='h-full w-1/2 bg-blue-500'>
-							<p>Orders</p>
-						</div>
 						<div className='h-full w-1/2 flex items-center justify-center flex-col'>
 							<p className='text-xl font-medium'>Edit your profile</p>
 							<form className='flex items-center justify-center flex-col mt-5'

@@ -20,7 +20,7 @@ export default function Categories() {
 		<BackgroundField>
 			<TopBar />
 			<NamePageField name="Categories" />
-			<BarCategoriesField categories={['tech', 'toy', 'material', 'food']}/>
+			<BarCategoriesField categories={['tech', 'toy', 'material', 'studio']}/>
 			<div className="w-full p-5 xl:grid xl:grid-cols-4 md:grid md:grid-cols-2 flex items-center justify-center flex-col">
 				{productsByCategorie.map(product => {
 					return (
