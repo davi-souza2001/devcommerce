@@ -20,7 +20,7 @@ export function TopBar() {
 				<Menu>
 					<MenuButton>
 						<div className='h-1/2 w-28 flex items-center justify-center bg-slate-800 p-2 rounded-md'>
-							<p>Options</p>
+							<p className='mr-2'>Options</p>
 							<p><HiArrowCircleDown /></p>
 						</div>
 					</MenuButton>
