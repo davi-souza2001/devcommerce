@@ -14,8 +14,7 @@ function App({ Component, pageProps }: any) {
 					<ProductProvider>
 						<WishlistProvider>
 							<Head>
-								<link rel="icon" type="svg" sizes="32x32" href="/logo.svg" />
-								<title>JoGeeker</title>
+								<title>DevCommerce</title>
 							</Head>
 							<Component {...pageProps} />
 						</WishlistProvider>
