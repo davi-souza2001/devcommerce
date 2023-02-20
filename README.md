@@ -67,7 +67,6 @@ npx turbo link
 - [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
 
 <!-- 
-TODO: Acabar testes no backend
 TODO: Testar se rotas podem ser trocadas para get
 TODO: Passar tudo para inglês
 TODO: Fazer projeto admin para adicionar e remover produtos
