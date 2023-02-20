@@ -10,10 +10,10 @@ export default function Cart() {
 	const [sum, setSum] = useState(0)
 
 	useEffect(() => {
-		cart.map((cart) => setSum(state => state += parseFloat(cart.price)))
+		const sumValues = cart.reduce((accumulator, value) => accumulator + parseFloat(value.price), 0)
 
+		setSum(sumValues)
 	}, [cart])
-	console.log(sum)
 
 	return (
 		<BackgroundField>
@@ -30,11 +30,11 @@ export default function Cart() {
 				<div className="w-[800px] flex items-center justify-center flex-col border-2 border-slate-300 rounded-lg p-5 mb-5">
 					<div className="h-12 w-full flex items-center justify-between border-b-2 border-slate-300">
 						<p>Subtotal</p>
-						<p>R$ 14,99</p>
+						<p>R$ {sum}</p>
 					</div>
 					<div className="h-12 w-full flex items-center justify-between border-b-2 border-slate-300">
 						<p>Shipping estimate</p>
-						<p>R$ 4,99</p>
+						<p>R$ 0,00</p>
 					</div>
 					<div className="h-12 w-full flex items-center justify-between border-b-2 border-slate-300">
 						<p>Discount</p>
