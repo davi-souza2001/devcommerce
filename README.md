@@ -1,75 +1,39 @@
-# Turborepo starter
+<html>   
+<h1 align="center">
+    DevCommerce
+</h1>
 
-This is an official Yarn v1 starter turborepo.
+MyRocket is a template for ecommerce platforms. Its purpose is to assemble a database, structure and layout of an ecommerce so that it can be used for several different types of ecommerces.
 
-## What's inside?
+🚨 **This repository is totally open to code improvements, and of course, feel free to use it as an ecommerce study** 🚨 
 
-This turborepo uses [Yarn](https://classic.yarnpkg.com/) as a package manager. It includes the following packages/apps:
+## Techs
+<div>
+    <img alt="REACT" width="120" src="https://img.shields.io/badge/next.js-61DAFB?style=for-the-badge&logo=next.js&logoColor=black"/>
+    <img alt="NODE" width="105" src="https://img.shields.io/badge/node-000?style=for-the-badge&logo=node.js&logoColor=green"/>
+    <img alt="PRISMA" width="125" src="https://img.shields.io/badge/prisma-fff?style=for-the-badge&logo=prisma&logoColor=black"/>
+    <img alt="TURBOREPO" width="160" src="https://img.shields.io/badge/turborepo-fff?style=for-the-badge&logo=turborepo&logoColor=black"/>
+    <img alt="VITEST" width="120" src="https://img.shields.io/badge/vitest-fff?style=for-the-badge&logo=vitest&logoColor=black"/>
+    <img alt="POSTGRESS" width="168" src="https://camo.githubusercontent.com/95a15266c9b093e9070410fa62c8dcba6611e79edd738e0ded7ec5b52541d6c4/68747470733a2f2f696d672e736869656c64732e696f2f7374617469632f76313f7374796c653d666f722d7468652d6261646765266d6573736167653d506f737467726553514c26636f6c6f723d343136394531266c6f676f3d506f737467726553514c266c6f676f436f6c6f723d464646464646266c6162656c3d"/>
+ </div>
+ <img alt="JEST" width="95" src="https://camo.githubusercontent.com/a3c759b03851724d698cf6880e546dc47d402f08aa3c48b716279118117c0736/68747470733a2f2f696d672e736869656c64732e696f2f7374617469632f76313f7374796c653d666f722d7468652d6261646765266d6573736167653d4a65737426636f6c6f723d433231333235266c6f676f3d4a657374266c6f676f436f6c6f723d464646464646266c6162656c3d"/>
 
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-yarn run build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-yarn run dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+## Interface
+![Screenshot from 2023-02-20 17-52-43](https://user-images.githubusercontent.com/77704994/220197671-79eb4b29-f474-4c5e-9853-8048a18ab65a.png)
+![Screenshot from 2023-02-20 17-52-49](https://user-images.githubusercontent.com/77704994/220197682-978aaeff-2d90-4ae4-a830-eee6146a774f.png)
+![Screenshot from 2023-02-20 17-52-55](https://user-images.githubusercontent.com/77704994/220197688-b57cc5f8-1c98-4478-9ff2-9862835ef0de.png)
+![Screenshot from 2023-02-20 17-53-00](https://user-images.githubusercontent.com/77704994/220197691-899437e7-8b3e-4c29-b2d7-836a13ad199a.png)
 
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+## Turborepo
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your turborepo:
+Testing turborepo for the first time. It helps a lot projects that need more than one repository. In this case, I used it to store my front and backend repository. In the end, I only need to run a single command to run the application and run its tests.
 
-```
-npx turbo link
-```
+## Tests 
 
-## Useful Links
+Unit tests were done using Jest. Through it, the application is 100% tested!
 
-- [Pipelines](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+![Screenshot_6](https://user-images.githubusercontent.com/77704994/178743238-a8e0e785-c887-4439-a0e1-27086e1f7838.png)
 
-<!-- 
-TODO: Testar se rotas podem ser trocadas para get
-TODO: Passar tudo para inglês
-TODO: Fazer projeto admin para adicionar e remover produtos
-TODO: Fazer modo claro e escuro
-TODO: Adicionar responsividade
- -->
+
+</html>   
