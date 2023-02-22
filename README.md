@@ -3,6 +3,8 @@
     DevCommerce
 </h1>
 
+This is a project for a small e-commerce system, where the main focus was on building the logic behind such a system, and the types of relationships that a database needs to support such a system.
+
 🚨 **This repository is totally open to code improvements, and of course, feel free to use it as an ecommerce study** 🚨 
 
 ## Techs
