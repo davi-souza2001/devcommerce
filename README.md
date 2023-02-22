@@ -3,8 +3,6 @@
     DevCommerce
 </h1>
 
-MyRocket is a template for ecommerce platforms. Its purpose is to assemble a database, structure and layout of an ecommerce so that it can be used for several different types of ecommerces.
-
 🚨 **This repository is totally open to code improvements, and of course, feel free to use it as an ecommerce study** 🚨 
 
 ## Techs
